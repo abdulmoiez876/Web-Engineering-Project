@@ -1,0 +1,34 @@
+.navbarposition {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.navbarwidth {
+  width: 100%;
+}
+
+.input {
+    background-color:rgba(0,0,0,0) !important;
+    border-color: white !important;
+    color: black !important;
+    width:40vw;
+    border-radius:15rem;
+}
+::placeholder{
+    color: white !important;
+}
+
+.searchbtn{
+    color:white!important;
+    border-color:white !important;
+}
+.searchbtn:hover{
+    color:green !important;
+}
+
+.logodiv{
+  width:10%;
+}
+.logowidth{
+  width:100% !important;
+}
