@@ -1,6 +1,9 @@
-.imgwidth{
-    width:100% !important;
-    position:absolute;
-    top:0;
-    left:0;
+.img {
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: brightness(90%);
+  z-index: -1;
 }

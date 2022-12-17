@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./navbar.module.css";
-import logo from "../../assets/logo.png"
+import logo from "../../assets/logo.png";
 
 export default function Navbar() {
   return (
@@ -25,40 +25,44 @@ export default function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active text-light" aria-current="page" href="#">
+              <a
+                className={`nav-link text-light ${styles.navbartext} ${styles.active} mx-4`}
+                aria-current="page"
+                href="#"
+              >
                 Home
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-light" href="#">
+              <a
+                className={`nav-link text-light ${styles.navbartext} mx-4`}
+                href="#"
+              >
                 Discover
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-light" href="#">
+              <a
+                className={`nav-link text-light ${styles.navbartext} mx-4`}
+                href="#"
+              >
                 Special Deals
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-light" href="#">
+              <a
+                className={`nav-link text-light ${styles.navbartext} mx-4`}
+                href="#"
+              >
                 Community
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-light">About Us</a>
+              <a className={`nav-link text-light ${styles.navbartext} mx-4`}>
+                About Us
+              </a>
             </li>
           </ul>
-          <form className="d-flex" role="search">
-            <input
-              className={`form-control me-2 ${styles.input}`}
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button className={`btn btn-outline-light ${styles.searchbtn}`} type="submit">
-              Search
-            </button>
-          </form>
         </div>
       </div>
     </nav>
