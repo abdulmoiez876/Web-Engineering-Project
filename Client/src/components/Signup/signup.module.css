@@ -1,7 +1,7 @@
 body {
   background-color: #eff2f7;
 }
-.loginbgpic {
+.signupbgpic {
   width: 100%;
   height: 100%;
   z-index: -1;
@@ -9,7 +9,7 @@ body {
   top: 0;
   left: 0;
 }
-.loginform {
+.signupform {
   width: 35%;
   margin: 0;
   position: absolute;
@@ -18,25 +18,18 @@ body {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-.loginlogo {
-  width: 50%;
+.signuplogo {
+  width: 40%;
   margin: auto;
 }
 .Signin {
   margin: auto;
   font: roboto;
 }
-.fpass {
-  text-decoration: none !important;
-}
-.fpass:hover {
-  text-decoration: none !important;
-  font-weight: bold;
-}
-.loginicon {
+.signupicon {
   color: grey;
 }
-.loginicon:hover {
+.signupicon:hover {
   color: green;
   font-weight: bold;
 }
@@ -47,15 +40,14 @@ body {
   align-items: center;
   justify-content: center;
 }
-
-.signuplink{
-  text-decoration: none;
-  color:black;
-  font-weight:500;
-  cursor: pointer;
+.loginlink{
+    text-decoration: none;
+    color:black;
+    font-weight:500;
+    cursor: pointer;
 }
-.signuplink:hover{
-  text-decoration: none;
-  color: green;
-  cursor: pointer;
+.loginlink:hover{
+    text-decoration: none;
+    color: green;
+    cursor: pointer;
 }

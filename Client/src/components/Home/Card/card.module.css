@@ -1,0 +1,43 @@
+.viewdest {
+  width: fit-content;
+}
+.viewbtn {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+.piccard {
+  height: 25vw !important;
+  width: 20vw !important;
+  border-radius: 2rem !important;
+  background-image: url("../../../assets/login.jpg");
+  background-size: cover;
+}
+
+.cardtitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: white;
+  position: absolute;
+  bottom: 15%;
+  font-family: open sans-serif;
+}
+.cardbtn {
+  font-size: 1.2rem;
+  font-weight: 400;
+  height: 2rem !important;
+  width: 6rem !important;
+  color: white;
+  background-color: #0000001c;
+  position: absolute;
+  bottom: 5%;
+  font-family: open sans-serif;
+  border-radius: 2rem !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cardsrow {
+  /* margin:0 5rem !important; */
+  justify-content: space-between;
+}

@@ -15,71 +15,72 @@ export default function Login() {
         <div className={`row ${styles.Signin}`}>
           <h2>Sign in</h2>
         </div>
-        <div className={`row`}>
-          <input
-            type="text"
-            placeholder="Enter Your Email"
-            className={`form-control mt-4`}
-          />
-        </div>
-        <div className={`row`}>
-          <input
-            type="text"
-            placeholder="Enter Your Password"
-            className={`form-control my-4`}
-          />
-        </div>
-        <div class="form-check d-flex justify-content-start mb-4">
-          <input
-            className="form-check-input"
-            type="checkbox"
-            value=""
-            id="loginpassremember"
-          />
-          <label className="form-check-label mx-2" htmlFor="loginpassremember">
-            {" "}
-            Remember password{" "}
-          </label>
-        </div>
-        <button type="submit" class="btn btn-success btn-block mb-4">
-          Login
-        </button>
-        <p className="small text-center">
-          <a className={`text-secondary ${styles.fpass}`} href="#!">
-            Forgot password?
-          </a>
-        </p>
-        <hr></hr>
-        <div className="text-center">
-          <p className="text-success">or sign up with:</p>
+        <form className="mt-4">
+          <div class="form-outline mb-4">
+            <input
+              type="email"
+              className="form-control"
+              placeholder="Email Address"
+            />
+          </div>
+
+          <div class="form-outline mb-4">
+            <input
+              type="password"
+              class="form-control"
+              placeholder="Password"
+            />
+          </div>
           <button
-            type="button"
-            className={`btn btn-link btn-floating mx-1 ${styles.loginicon}`}
+            type="submit"
+            class={`btn btn-outline-success btn-block ${styles.btn}`}
           >
-            <i className="fab fa-facebook-f"></i>
+            Login
           </button>
 
-          <button
-            type="button"
-            className={`btn btn-link btn-floating mx-1 ${styles.loginicon}`}
-          >
-            <i className="fab fa-google"></i>
-          </button>
+          <p className="small text-center mt-3">
+            <a className={`text-secondary ${styles.fpass}`} href="#!">
+              Forgot password?
+            </a>
+          </p>
+          <hr></hr>
+          <div className="text-center">
+            <p className="text-success">or sign up with:</p>
+            <button
+              type="button"
+              className={`btn btn-link btn-floating mx-1 ${styles.loginicon}`}
+            >
+              <i className="fab fa-facebook-f"></i>
+            </button>
 
-          <button
-            type="button"
-            className={`btn btn-link btn-floating mx-1 ${styles.loginicon}`}
-          >
-            <i className="fab fa-twitter"></i>
-          </button>
+            <button
+              type="button"
+              className={`btn btn-link btn-floating mx-1 ${styles.loginicon}`}
+            >
+              <i className="fab fa-google"></i>
+            </button>
 
-          <button
-            type="button"
-            className={`btn btn-link btn-floating mx-1 ${styles.loginicon}`}
-          >
-            <i className="fab fa-github"></i>
-          </button>
-        </div>
+            <button
+              type="button"
+              className={`btn btn-link btn-floating mx-1 ${styles.loginicon}`}
+            >
+              <i className="fab fa-twitter"></i>
+            </button>
+
+            <button
+              type="button"
+              className={`btn btn-link btn-floating mx-1 ${styles.loginicon}`}
+            >
+              <i className="fab fa-github"></i>
+            </button>
+          </div>
+          <div class="text-center mt-2 d-flex justify-content-center">
+            <p className="text-secondary m-0">Not Registered?</p>
+            <a className={`mx-1 ${styles.signuplink}`} href="#">
+              Sign up
+            </a>
+          </div>
+        </form>
       </section>
       <div>
         <img src={loginPic} alt="loginPic" className={styles.loginbgpic} />
