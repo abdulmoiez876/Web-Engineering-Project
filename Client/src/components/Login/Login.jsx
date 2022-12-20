@@ -48,6 +48,10 @@ export default function Login() {
     })
   }
 
+  const toSignUp = () => {
+    navigate('/signup');
+  }
+
   return (
     <>
       <section
@@ -131,7 +135,7 @@ export default function Login() {
           </div>
           <div class="text-center mt-2 d-flex justify-content-center">
             <p className="text-secondary m-0">Not Registered?</p>
-            <a className={`mx-1 ${styles.signuplink}`} href="#">
+            <a className={`mx-1 ${styles.signuplink}`} onClick = {toSignUp}>
               Sign up
             </a>
           </div>
