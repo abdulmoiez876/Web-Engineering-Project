@@ -5,6 +5,7 @@ import Signup from "./components/Signup/Signup";
 import Cookies from "./components/Cookiespopup/Cookies";
 import Card from "./components/Home/Card/Card";
 import Footer from "./components/Footer/Footer";
+import TravelPackage from "./components/Home/TravelPackage/TravelPackage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       {/* <Cookies/> */}
       {/* <Card/> */}
       {/* <Footer /> */}
+      {/* <TravelPackage/> */}
     </>
   );
 }

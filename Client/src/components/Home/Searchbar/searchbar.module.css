@@ -1,16 +1,17 @@
 .searchform {
   width: 70%;
-  margin: auto;
-  position: relative;
-  top: 7rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .searchcard {
-  background: rgb(255, 255, 255);
-  margin-top:11%;
+  background: rgba(255, 255, 255, 0.31);
 }
 .searchbarheading {
-  color:#276955 !important;
+  color: #276955 !important;
   font-family: "Helvetica Neue", Helvetica, Arial;
   font-weight: bolder;
   font-size: 3rem;
@@ -22,7 +23,8 @@
 }
 
 .label {
-  color:green !important;
-  font-size:1rem;
-  font-weight:600;
+  color: green !important;
+  font-size: 1rem;
+  font-weight: 600;
 }
+

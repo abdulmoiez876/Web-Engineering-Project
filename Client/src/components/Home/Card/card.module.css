@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 .viewdest {
   width: fit-content;
 }
@@ -6,31 +9,62 @@
   align-items: center;
   justify-content: right;
 }
-.piccard {
+.parent {
   height: 25vw !important;
   width: 20vw !important;
-  border-radius: 2rem !important;
+  border-radius: 1.5rem;
+  overflow: hidden !important;
+}
+.piccard {
+  height: 100% !important;
+  width: 100% !important;
   background-image: url("../../../assets/login.jpg");
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: 0.5s;
+  border-radius: 1.5rem;
+}
+
+.parent:hover .piccard,
+.parent:focus .piccard {
+  transform: scale(1.2);
+}
+.piccard::before {
+  content: "";
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 1.5rem;
+  background-color: rgba(0, 128, 0, 0.233);
+}
+.parent:hover .piccard::before,
+.parent:focus .piccard::before {
+  display: block;
 }
 
 .cardtitle {
-  font-size: 1.8rem;
+  font-size: 2vw;
   font-weight: 600;
   color: white;
-  position: absolute;
-  bottom: 15%;
+  position: relative;
+  bottom: 50%;
   font-family: open sans-serif;
+  text-decoration: none;
 }
+
 .cardbtn {
-  font-size: 1.2rem;
+  font-size: 1.2vw;
   font-weight: 400;
-  height: 2rem !important;
-  width: 6rem !important;
+  height: 2vw !important;
+  width: 6vw !important;
   color: white;
   background-color: #0000001c;
-  position: absolute;
-  bottom: 5%;
+  position: relative;
+  bottom: 50%;
   font-family: open sans-serif;
   border-radius: 2rem !important;
   display: flex;
@@ -38,6 +72,6 @@
   justify-content: center;
 }
 .cardsrow {
-  /* margin:0 5rem !important; */
   justify-content: space-between;
+  text-decoration: none;
 }

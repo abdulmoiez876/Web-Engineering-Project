@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./card.module.css";
+import cardPic from "../../../assets/login.jpg";
 
 export default function Cards() {
   const cardInfo = [
@@ -22,15 +23,13 @@ export default function Cards() {
   ];
   const renderCard = (card, index) => {
     return (
-      <div
-        className={`col-md-4 card p-4 shadow rounded-4 ${styles.piccard}`}
-        key={index}
-      >
-        <h2 className={`card-title text-light ${styles.cardtitle}`}>
+      <div className={`${styles.parent} p-0`}>
+        <div className={`col-md-4 card ${styles.piccard}`} key={index}></div>
+        <h2 className={`card-title m-4 text-light ${styles.cardtitle}`}>
           {card.title}
         </h2>
         <button
-          className={`btn btn-outline-light text-center ${styles.cardbtn}`}
+          className={`btn btn-outline-light m-4 text-center ${styles.cardbtn}`}
         >
           {card.btntext}
         </button>
@@ -51,8 +50,10 @@ export default function Cards() {
           </button>
         </div>
       </div>
-      <div className={`row mx-5 ${styles.cardsrow}`}>
-        {cardInfo.map(renderCard)}
+      <div>
+        <a className={`row mx-5 ${styles.cardsrow}`} href="#">
+          {cardInfo.map(renderCard)}
+        </a>
       </div>
     </>
   );

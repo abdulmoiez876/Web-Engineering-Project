@@ -4,7 +4,7 @@ import logo from "../../assets/logo.png";
 
 export default function Footer() {
   return (
-    <div className="fluid px-5 bg-dark mt-5">
+    <div className="fluid px-5 bg-dark">
       <footer className="pt-5 text-light">
         <div className="row">
           <div className="col-2">
