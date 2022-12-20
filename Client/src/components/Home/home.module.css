@@ -6,4 +6,7 @@ body {
   height: 100vh;
   background-image: url(../../assets/landing.jpg);
   background-size: cover;
+  position: sticky;
+  z-index: -1;
+  top:0;
 }

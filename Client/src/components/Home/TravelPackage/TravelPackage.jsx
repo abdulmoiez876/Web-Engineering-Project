@@ -7,7 +7,7 @@ export default function TravelPackage() {
   const [mainheading, setmainheading] = React.useState("City trip incl. Munich Card and Tower Ascent");
   const [details, setdetails] = React.useState(" We look forward to seeing you again in Munich. Our tip: the exclusive travel package with Munich Card and Tower Ascent.");
   return (
-    <div className={`float mt-5 ${styles.container}`}>
+    <div className={`float pt-5 ${styles.container}`}>
       <div className={`py-4 ${styles.travelpkgpic}`}>
         <div className={`w-25 ${styles.offer}`}>
           <h4 className={`bg-success p-3 text-light`}>

@@ -2,10 +2,7 @@
   box-sizing: border-box;
 }
 .container {
-  height: 100vh;
-  position: sticky;
-  top: 0;
-  z-index: -1;
+  background-color: white;
 }
 .travelpkgpic {
   background: linear-gradient(rgba(0, 0, 0, 0.191), rgba(0, 0, 0, 0.191)),

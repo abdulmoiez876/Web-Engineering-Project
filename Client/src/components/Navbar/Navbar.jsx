@@ -1,11 +1,42 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./navbar.module.css";
 import logo from "../../assets/logo.png";
 
 export default function Navbar() {
+  const [navbar, setNavbar] = useState(false);
+  const [navlinkcolor, setnavlinkcolor] = useState(false);
+
+  const changeBackground = () => {
+    console.log(window.scrollY);
+    if (window.scrollY >= window.innerHeight) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  };
+  const changeColor = () => {
+    console.log(window.scrollY);
+    if (window.scrollY >= window.innerHeight) {
+      setnavlinkcolor(true);
+    } else {
+      setnavlinkcolor(false);
+    }
+  };
+  useEffect(() => {
+    changeBackground();
+    // adding the event when scroll change background
+    window.addEventListener("scroll", changeBackground);
+  });
+  useEffect(() => {
+    changeColor();
+    // adding the event when scroll change background
+    window.addEventListener("scroll", changeColor);
+  });
   return (
     <nav
-      className={`navbar navbar-expand-lg navbar-dark shadow-5-strong ${styles.navbarposition} ${styles.navbarwidth}`}
+      className={`navbar navbar-expand-lg ${styles.navbarposition}  ${
+        navbar ? "bg-light" : ""
+      }`}
     >
       <div className="container-fluid">
         <a className={`navbar-brand ${styles.logodiv}`} href="#">
@@ -26,7 +57,9 @@ export default function Navbar() {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <a
-                className={`nav-link text-light ${styles.navbartext} ${styles.active} mx-4`}
+                className={`nav-link text-light ${
+                  navlinkcolor ? "text-dark" : ""
+                } ${styles.navbartext} ${styles.active} mx-4`}
                 aria-current="page"
                 href="#"
               >
@@ -35,7 +68,9 @@ export default function Navbar() {
             </li>
             <li className="nav-item">
               <a
-                className={`nav-link text-light ${styles.navbartext} mx-4`}
+                className={`nav-link text-light ${
+                  navlinkcolor ? "text-dark" : ""
+                } ${styles.navbartext} mx-4`}
                 href="#"
               >
                 Discover
@@ -43,7 +78,9 @@ export default function Navbar() {
             </li>
             <li className="nav-item">
               <a
-                className={`nav-link text-light ${styles.navbartext} mx-4`}
+                className={`nav-link text-light ${
+                  navlinkcolor ? "text-dark" : ""
+                } ${styles.navbartext} mx-4`}
                 href="#"
               >
                 Special Deals
@@ -51,14 +88,20 @@ export default function Navbar() {
             </li>
             <li className="nav-item">
               <a
-                className={`nav-link text-light ${styles.navbartext} mx-4`}
+                className={`nav-link text-light ${
+                  navlinkcolor ? "text-dark" : ""
+                } ${styles.navbartext} mx-4`}
                 href="#"
               >
                 Community
               </a>
             </li>
             <li className="nav-item">
-              <a className={`nav-link text-light ${styles.navbartext} mx-4`}>
+              <a
+                className={`nav-link text-light ${
+                  navlinkcolor ? "text-dark" : ""
+                } ${styles.navbartext} mx-4`}
+              >
                 About Us
               </a>
             </li>

@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box;
 }
+.outter{
+  background-color: white;
+}
 .viewdest {
   width: fit-content;
 }

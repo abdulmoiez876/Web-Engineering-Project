@@ -1,28 +1,25 @@
 .navbarposition {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.navbarwidth {
   width: 100%;
+  position: fixed;
+  z-index: 100;
 }
 
-.navbartext{
-  font-size:1.25rem;
-  font-weight:medium;
+.navbartext {
+  font-size: 1.25rem;
+  font-weight: medium;
   font-family: "roboto";
 }
 
-.navbartext:hover{
+.navbartext:hover {
   color: green !important;
 }
 
-.active{
+.active {
   font-weight: bold;
 }
-.logodiv{
-  width:10%;
+.logodiv {
+  width: 10%;
 }
-.logowidth{
-  width:100% !important;
+.logowidth {
+  width: 100% !important;
 }
