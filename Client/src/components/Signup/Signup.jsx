@@ -13,6 +13,8 @@ export default function Signup() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
+  const [warningMessage, setWarningMessage] = useState('');
+
   const navigate = useNavigate();
 
   const changeHandler = (event) => {
@@ -35,7 +37,27 @@ export default function Signup() {
 
   const signUpHandler = (event) => {
     event.preventDefault();
-    
+
+    if(!(firstName && lastName && email && password && confirmPassword)) {
+      setWarningMessage("Please Fill All Fields!");
+    }
+    else {
+      if(password !== confirmPassword) {
+        setWarningMessage('Password and Confirm Password must be the same!');
+      }
+      else {
+        axios.post('http://localhost:8000/addUser', {
+          firstName,
+          lastName,
+          email,
+          password
+        }).then((response) => {
+          setWarningMessage(response.data.message);
+        }).catch((error) => {
+          setWarningMessage(error);
+        })
+      }
+    }
   }
 
   return (
@@ -43,6 +65,11 @@ export default function Signup() {
       <section
         className={`card px-4 py-4 px-md-5 text-center text-lg-start ${styles.signupform}`}
       >
+        {warningMessage.length > 0 &&
+          <div class="alert alert-warning" role="alert">
+            {warningMessage}
+          </div>
+        }
         <div className="row">
           <img src={logo} alt="Logo" className={styles.signuplogo} />
         </div>
@@ -75,7 +102,7 @@ export default function Signup() {
             <input type="password" class="form-control" placeholder="Confirm Password" onChange = {changeHandler} name = "confirmPassword" value={confirmPassword} required />
           </div>
 
-          <button onClick={signUpHandler} class={`btn btn-outline-success btn-block ${styles.btn}`}>
+          <button type="submit" onClick={signUpHandler} class={`btn btn-outline-success btn-block ${styles.btn}`}>
             Sign up
           </button>
           <div class="text-center mt-4">
