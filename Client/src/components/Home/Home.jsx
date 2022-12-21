@@ -7,6 +7,7 @@ import Card from "./Card/Card";
 import Footer from "../Footer/Footer";
 import TravelPackage from "./TravelPackage/TravelPackage";
 import Newscard from "./Card/Newscard";
+import Piccard from "./Card/Piccard";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <Card />
       <TravelPackage />
       <Newscard/>
+      <Piccard/>
       <Footer />
     </>
   );
