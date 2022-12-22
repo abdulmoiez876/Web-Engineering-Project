@@ -7,15 +7,17 @@ import Card from "./components/Home/Card/Card";
 import Footer from "./components/Footer/Footer";
 import TravelPackage from "./components/Home/TravelPackage/TravelPackage";
 import Contactus from "./components/Contactus/Contactus";
+import Aboutus from "./components/Aboutus/Aboutus";
+import Contactusform from "./components/Contactus/Contactusform/Contactusform";
 
 function App() {
   return (
     <>
-      {/* <Routes>
+      <Routes>
         <Route path="" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/home" element={<Home />} />
-      </Routes> */}
+      </Routes>
       {/* 
       <Navbar /> */}
       {/* <Signup /> */}
@@ -23,7 +25,9 @@ function App() {
       {/* <Card/> */}
       {/* <Footer /> */}
       {/* <TravelPackage/> */}
-      <Contactus/>
+      {/* <Contactus/> */}
+      {/* <Aboutus /> */}
+      {/* <Contactusform/> */}
     </>
   );
 }
