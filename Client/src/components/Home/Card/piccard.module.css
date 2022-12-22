@@ -1,0 +1,54 @@
+.parent{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    padding: 5vh 0;
+}
+.section{
+    padding: 0 20vh;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  padding: 3vh 20vh;
+  display: flex;
+  justify-content: space-between;
+}
+.innerdiv {
+  width: 25vw;
+  filter: drop-shadow(5px 5px 5px #00000065);
+}
+.img {
+  width: 100%;
+  height: 100%;
+  filter:brightness(60%);
+  object-fit: cover;
+}
+.imgText {
+  padding-top: 20%;
+}
+
+
+.container2 {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    padding: 3vh 20vh;
+    display: flex;
+    justify-content: space-between;
+  }
+  .innerdiv2{
+    width: 40vw;
+    filter: drop-shadow(5px 5px 5px #00000065);
+  }
+  .img2 {
+    width: 100%;
+    height: 100%;
+    filter:brightness(60%);
+    object-fit: cover;
+  }
+  .imgText2 {
+    padding-top: 40%;
+  }
+  

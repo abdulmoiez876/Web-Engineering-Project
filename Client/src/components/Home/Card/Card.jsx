@@ -39,21 +39,23 @@ export default function Cards() {
 
   return (
     <>
-      <div className="row m-5">
-        <p className="mb-1">PLAN YOUR TRIP</p>
-        <h2 className="col-md-6">Where to next?</h2>
-        <div className={`col-md-6 ${styles.viewbtn}`}>
-          <button
-            className={`btn btn-outline-success rounded-5 ${styles.viewdest}`}
-          >
-            View All Destination
-          </button>
+      <div className={`p-5 ${styles.outter}`}>
+        <div className={`row`}>
+          <p className="mb-1">PLAN YOUR TRIP</p>
+          <h2 className="col-md-6">Where to next?</h2>
+          <div className={`col-md-6 ${styles.viewbtn}`}>
+            <button
+              className={`btn btn-outline-success rounded-5 ${styles.viewdest}`}
+            >
+              View All Destination
+            </button>
+          </div>
         </div>
-      </div>
-      <div>
-        <a className={`row mx-5 ${styles.cardsrow}`} href="#">
-          {cardInfo.map(renderCard)}
-        </a>
+        <div>
+          <a className={`row ${styles.cardsrow}`} href="#">
+            {cardInfo.map(renderCard)}
+          </a>
+        </div>
       </div>
     </>
   );
