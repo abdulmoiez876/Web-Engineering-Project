@@ -70,22 +70,26 @@
   height: 3px;
   background-color: #198754;
 }
-.cardrow{
+.cardrow {
   margin: 0;
-  padding:0 10%;
+  padding: 0 10%;
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
 }
 .card {
   width: 30%;
   padding: 2%;
 }
-.card:hover{
+.card:hover {
   border: 1px solid black;
 }
-.card:hover a{
-  color:#198754 !important;
+.card:hover a {
+  color: #198754 !important;
 }
-.card:hover img{
-  margin-bottom:2% !important;
+.card:hover img {
+  margin-bottom: 2% !important;
+}
+
+.smallfooter {
+  margin-top: 10%;
 }
