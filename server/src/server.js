@@ -2,6 +2,8 @@ import http from 'http';
 import {app} from './app.js';
 import mongoose from 'mongoose';
 
+mongoose.set("strictQuery", false);
+
 const PORT = 8000;
 const MONGO_URL = "mongodb+srv://webEngineering:webEngineeringpass@webengineering.x8hc8bg.mongodb.net/?retryWrites=true&w=majority";
 

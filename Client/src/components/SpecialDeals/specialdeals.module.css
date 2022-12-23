@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+.gap {
+    height: 65px;
+}
+
+.content-container {
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+.header-container * {
+    padding: 0;
+    margin: 0;
+}
+
+.header-container {
+    margin-top: 5px;
+}
+
+.main-heading {
+    font-size: 3.2rem;
+}
+
+.main-para {
+    margin-top: 2px;
+    margin-bottom: 5px;
+    color: rgba(0, 0, 0, 0.6);
+
+    font-size: 1.1rem;
+}

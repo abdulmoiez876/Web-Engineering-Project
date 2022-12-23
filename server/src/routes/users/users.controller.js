@@ -9,7 +9,7 @@ const httpAddNewUser = async (req, res) => {
             res.status(201).send(response);
         }
         else {
-            res.status(406).send(response);
+            res.status(201).send(response);
         }
     }
     catch (err) {
@@ -25,7 +25,7 @@ const httpAuthenticateUser = async (req, res) => {
             return res.status(200).send(response);
         }
         else {
-            return res.status(404).send(response);
+            return res.status(200).send(response);
         }
     }
     catch (err) {
