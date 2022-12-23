@@ -6,6 +6,8 @@ import Cookies from "./components/Cookiespopup/Cookies";
 import Card from "./components/Home/Card/Card";
 import Footer from "./components/Footer/Footer";
 import TravelPackage from "./components/Home/TravelPackage/TravelPackage";
+import Discover from "./components/Navbar/Discover/Discover";
+import Navbar from './components/Navbar/Navbar'
 
 function App() {
   return (
@@ -14,13 +16,14 @@ function App() {
         <Route path="" element={<Login />} />
         <Route path="/home" element={<Home />} />
       </Routes>
-      {/* 
-      <Navbar /> */}
-      {/* <Signup /> */}
-      {/* <Cookies/> */}
-      {/* <Card/> */}
-      {/* <Footer /> */}
-      {/* <TravelPackage/> */}
+      
+      {/* <Navbar />
+      <Signup />
+      <Cookies/>
+      <Card/>
+      <Footer />
+      <TravelPackage/> */}
+      {/* <Discover/> */}
     </>
   );
 }
