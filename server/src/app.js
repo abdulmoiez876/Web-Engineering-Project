@@ -12,7 +12,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(morgan('short'));
-app.use(fileUpload());
+// app.use(fileUpload());
 
 app.use(usersRouter);
 app.use(contactUsRouter);

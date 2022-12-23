@@ -2,7 +2,7 @@ import { addNewHotel } from "../../models/hotels/hotels.model.js";
 
 const httpAddNewHotel = async (req, res) => {
     try {
-        const response = await addNewHotel(req.body);
+        const response = await addNewHotel(req.body, req.file);
 
         if(response.status) {
             return res.status(201).send(response);

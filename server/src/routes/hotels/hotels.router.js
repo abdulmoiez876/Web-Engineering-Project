@@ -4,7 +4,7 @@ import { upload } from '../../models/hotels/hotels.model.js';
 
 const hotelsRouter = express.Router();
 
-hotelsRouter.post('/addNewHotel', httpAddNewHotel);
+hotelsRouter.post('/addNewHotel', upload.single('image'), httpAddNewHotel);
 
 export {
     hotelsRouter

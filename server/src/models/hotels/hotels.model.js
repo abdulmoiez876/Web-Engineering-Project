@@ -1,5 +1,6 @@
 import hotels from './hotels.mongo.js';
 import multer from 'multer';
+import fs from 'fs';
 
 const getLatestId = async () => {
     const latestId = await hotels.findOne().sort('-id');
@@ -22,7 +23,7 @@ const upload = multer({
     storage
 })
 
-const addNewHotel = async (hotelData) => {
+const addNewHotel = async (hotelData, picData) => {
     try {
         const id = await getLatestId();
 
@@ -39,6 +40,10 @@ const addNewHotel = async (hotelData) => {
             try {
                 await hotels.create({
                     id,
+                    image: {
+                        data: fs.readFileSync('uploads/' + picData.filename),
+                        contentType: "image/png"
+                    },
                     ...hotelData
                 })
 
