@@ -11,6 +11,7 @@
     "faker": "^6.6.6",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.1.0",
+    "react-bootstrap": "^2.7.0",
     "react-cookie-consent": "^8.0.1",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.5.0",
