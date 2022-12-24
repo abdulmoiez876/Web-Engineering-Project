@@ -13,4 +13,8 @@
     left: 10%;
     width: 50%;
 }
+.description{
+    line-height: 30px;
+    word-spacing: 2px;
+}
 
