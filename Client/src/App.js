@@ -45,6 +45,8 @@ function App() {
       <GuideBooks />
       {/* <Top topImage1={topImage1} continentsImages={continentsImages}/> */}
       {/* <Navbar /> */}
+      {/* 
+      <Navbar /> */}
       {/* <Signup /> */}
       {/* <Cookies/> */}
       {/* <Card/>

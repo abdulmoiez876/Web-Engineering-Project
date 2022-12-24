@@ -12,39 +12,36 @@ const addNewUser = async (userData) => {
     try {
         const newUserId = await getLatestUserId();
 
-        const res = await users.updateOne({email: userData.email}, {
-            id: newUserId,
-            email: userData.email,
-            password: userData.password,
-            firstName: userData.firstName,
-            lastName: userData.lastName
-        }, {
-            upsert: true
-        });
-
-        if(res.matchedCount >= 1) {
+        if((await users.find({email: userData.email})).length > 0) {
             return {
                 status: false,
                 message: "User already exists!"
             }
         }
-        else if(res.acknowledged) {
-            return {
-                status: true,
-                message: "User created successfully!"    
-            }
-        }
         else {
-            return {
-                status: false,
-                message: "User could not be created!" 
+            try {
+                await users.create({
+                    id: newUserId,
+                    ...userData
+                })
+
+                return {
+                    status: true,
+                    message: "User created successfully!"
+                }
+            }
+            catch(err) {
+                return {
+                    status: false,
+                    message: "User couldn't be created, please try again!"
+                }
             }
         }
     }
     catch(err) {
         return {
             status: false,
-            message: "User could not be created!" 
+            message: "User could not be created, please try again!" 
         }
     }
 }
