@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./footer.module.css";
+import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 
 export default function Footer() {
@@ -188,28 +189,28 @@ export default function Footer() {
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a
-                  href="#"
+                <Link
+                  to="/suggestion"
                   className={`nav-link p-0 text-secondary ${styles.footerlink}`}
                 >
                   Suggestions
-                </a>
+                </Link>
               </li>
               <li className="nav-item mb-2">
-                <a
-                  href="#"
+                <Link
+                  to="/workForUs"
                   className={`nav-link p-0 text-secondary ${styles.footerlink}`}
                 >
                   Work with Us
-                </a>
+                </Link>
               </li>
               <li className="nav-item mb-2">
-                <a
-                  href="#"
+                <Link
+                  to="/Contactus"
                   className={`nav-link p-0 text-secondary ${styles.footerlink}`}
                 >
                   Contact Us
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./navbar.module.css";
 import logo from "../../assets/logo.png";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
@@ -8,7 +9,7 @@ export default function Navbar() {
 
   const changeBackground = () => {
     console.log(window.scrollY);
-    if (window.scrollY >= window.innerHeight) {
+    if (window.scrollY >= window.innerHeight-100) {
       setNavbar(true);
     } else {
       setNavbar(false);
@@ -16,7 +17,7 @@ export default function Navbar() {
   };
   const changeColor = () => {
     console.log(window.scrollY);
-    if (window.scrollY >= window.innerHeight) {
+    if (window.scrollY >= window.innerHeight-100) {
       setnavlinkcolor(true);
     } else {
       setnavlinkcolor(false);
@@ -77,14 +78,14 @@ export default function Navbar() {
               </a>
             </li>
             <li className="nav-item">
-              <a
+              <Link
                 className={`nav-link text-light ${
                   navlinkcolor ? "text-dark" : ""
                 } ${styles.navbartext} mx-4`}
-                href="#"
+                to="/specialDeals"
               >
                 Special Deals
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
               <a

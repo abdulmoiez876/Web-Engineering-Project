@@ -1,0 +1,27 @@
+.maincontainer {
+  width: 100%;
+  height: 80vh;
+  background-image: url("../../../assets/suggestion.jpg");
+  background-size: cover;
+  position: relative;
+}
+.maintext {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.pagetitle {
+  font-size: 5rem;
+  font-weight: 600;
+  font-family: Impact, "Arial Narrow Bold", sans-serif;
+}
+.openingscontainer {
+  display: flex;
+  justify-content: center;
+}
+.dropdownwidth {
+  width: 50% !important;
+}
