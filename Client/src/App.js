@@ -15,8 +15,6 @@ import AdminCustomersInfo from "./components/Admin/AdminCustomersInfo/AdminCusto
 import Discover from "./components/Navbar/Discover/Discover";
 import Navbar from "./components/Navbar/Navbar";
 import Aboutus from "./components/Aboutus/Aboutus";
-import Contactus from "./components/Contactus/Contactus";
-import SpecialDeals from "./components/SpecialDeals/SpecialDeals";
 import WorkForUs from "./components/pages/WorkForUs/WorkForUs";
 import Suggestion from "./components/pages/Suggestion/Suggestion";
 import Terms from "./components/pages/Terms/Terms";

@@ -10,29 +10,44 @@
     position: fixed;
 }
 
-.content-container {
-    padding-left: 32px;
-    padding-right: 32px;
+.support-container > *:not(:first-child) {
+    margin-left: 15%;
 }
 
-.content-container > div > h1 {
-    font-size: 1.6rem;
-}
 
 .support-container {
     margin-top: 3vh;
     margin-left: 3vh;
 }
 
-.support-container > *:not(:first-child) {
-    margin-left: 15.3%;
+.customerHeading {
+    padding-left: 32px;
 }
 
-.leftcol > div:nth-last-of-type(1) {
-    height: 50px;
-    display: flex;
-    align-items: center;
+.customerHeading h1 {
+    font-size: 1.75rem;
+    font-weight: 400;
 }
 
+.customersTableContainer {
+    padding: 0 32px;
+    margin-top: 20px;
+}
 
+table {
+    border: 1px solid black;
+}
 
+.btnDelete {
+    padding: 4px;
+}
+
+.btnUpdate {
+    display: inline-block;
+    /* padding: 4px; */
+}
+
+.btnUpdateContainer {
+    margin-top: 20px;
+    padding-left: 32px;
+}

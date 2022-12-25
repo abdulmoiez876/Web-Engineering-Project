@@ -10,7 +10,7 @@ export default function AdminBookings() {
   const user = {
       name: 'Mohsin Sheikh',
       email: 'sheikhmohsin181@gmail.com',
-      package: 'Continental',
+      hotel: 'Continental',
       booking: 'active',
       roomtype: 'Single',
       arrive: '10-02-2020',
@@ -34,7 +34,7 @@ export default function AdminBookings() {
             <tr>
               <th scope="col">#</th>
               <th scope="col">User</th>
-              <th scope="col">Package</th>
+              <th scope="col">Hotel</th>
               <th scope="col">Booking</th>
               <th scope="col">Room Type</th>
               <th scope="col">Arrive</th>
@@ -47,7 +47,7 @@ export default function AdminBookings() {
             return <tr>
               <th scope="row">{index+1}</th>
               <td>{user.name}</td>
-              <td>{user.package}</td>
+              <td>{user.hotel}</td>
               <td>{user.booking}</td>
               <td>{user.roomtype}</td>
               <td>{user.arrive}</td>
