@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./admincustomers.module.css";
+import styles from "./adminbookings.module.css";
 import AdminNavbar from "../AdminNavbar/AdminNavbar";
 
 export default function AdminBookings() {
@@ -51,7 +51,7 @@ export default function AdminBookings() {
               <td>{user.booking}</td>
               <td>{user.roomtype}</td>
               <td>{user.arrive}</td>
-              <td>{user.payments}</td>
+              <td>{user.payment}</td>
               <td><button type="button" className={`${styles.btnEdit} btn btn-primary`}>Edit</button></td>
             </tr>
           })}

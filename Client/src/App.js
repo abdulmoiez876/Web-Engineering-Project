@@ -19,6 +19,8 @@ import Contactusform from "./components/Contactus/Contactusform/Contactusform";
 import AdventureTravel from "./components/Footer/TravelInterests/AdventureTravel/AdventureTravel";
 import Top from "./components/Footer/Shop/GuideBooks/Top/Top";
 import GuideBooks from "./components/Footer/Shop/GuideBooks/GuideBooks";
+import AdminBookings from "./components/Admin/AdminBookings/AdminBookings";
+import AdminSupport from './components/Admin/AdminSupport/AdminSupport';
 
 function App() {
   const dataforAdventureTravels = [
@@ -50,20 +52,9 @@ function App() {
         <Route path="/special" element={<SpecialDeals />} />
         <Route path="/cardDashboard" element={<DashboardCard />} />
         <Route path="/customerAdmin" element={<AdminCustomersInfo />} />
+        <Route path="/adminbookings" element={<AdminBookings />} />
+        <Route path="/adminsupport" element={<AdminSupport />} />
       </Routes>
-      {/* <Home/> */}
-      {/* <AdventureTravel dataforAdventureTravels={dataforAdventureTravels}/> */}
-      <GuideBooks />
-      {/* <Top topImage1={topImage1} continentsImages={continentsImages}/> */}
-      {/* <Navbar /> */}
-      {/* 
-      <Navbar /> */}
-      {/* <Signup /> */}
-      {/* <Cookies/> */}
-      {/* <Card/> */}
-      {/* <Footer /> */}
-      {/* <TravelPackage/> */}
-      <Contactus/>
     </>
   );
 }
