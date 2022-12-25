@@ -1,9 +1,8 @@
 import React from 'react'
-import styles from "./top.module.css"
-import Navbar from '../../../../Navbar/Navbar'
+import styles from "./topEnglishBooks.module.css"
 import { useNavigate } from 'react-router-dom'
 
-export default function Top(props) {
+export default function TopEnglishBooks(props) {
     const navigate = useNavigate();
   return (
     <>
@@ -28,7 +27,7 @@ export default function Top(props) {
                 <div className={styles.continentFlex}>
                     {props.continentsImages.map((element,index)=>{
                          {console.log(element["name"])}
-                        return <div className={styles.continentImageContainer} onClick={()=>{navigate(`/books/${element["name"]}`)}}>
+                        return <div className={styles.continentImageContainer} onClick={()=>{navigate(`/englishbooks/${element["name"]}`)}}>
                         <img className={styles.continentImage} src={props.continentsImages[index]["image"]}></img>
                         <h5 className={styles.continentName}>{props.continentsImages[index]["name"]}</h5>
                         

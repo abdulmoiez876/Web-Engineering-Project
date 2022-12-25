@@ -4,8 +4,9 @@ import Carousel from 'react-bootstrap/Carousel';
 import Footer from '../../Footer';
 import Navbar from '../../../Navbar/Navbar';
 import Cards from './Cards/Cards';
+import { dataforAdventureTravels } from './AdventureTravelData';
 
-export default function AdventureTravel(props) {
+export default function AdventureTravel() {
     
       const [index, setIndex] = useState(0);
   const handleSelect = (selectedIndex, e) => {
@@ -14,7 +15,7 @@ export default function AdventureTravel(props) {
     <>
     <Navbar/>
     <Carousel className={styles.carousel} interval={4000} fade={true} activeIndex={index} onSelect={handleSelect}>
-       {props.dataforAdventureTravels.map((slide, i) => {
+       {dataforAdventureTravels.map((slide, i) => {
         return (
           <Carousel.Item>
         <div>        
