@@ -6,8 +6,10 @@ const hotelsSchema = new mongoose.Schema({
         required: true
     }, 
     image: {
-        data: Buffer,
-        contentType: String
+        type: String,
+        required: true
+        // data: Buffer,
+        // contentType: String
     },
     name: {
         type: String,
