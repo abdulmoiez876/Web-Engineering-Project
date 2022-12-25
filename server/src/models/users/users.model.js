@@ -78,8 +78,40 @@ const authenticateUser = async (userData) => {
     }
 }
 
+const getAllUsers = async () => {
+    try {
+        const result = await users.find();
+        return {
+            result,
+            status: true
+        }
+    }
+    catch(err) {
+        return {
+            status: false
+        }
+    }
+}
+
+const deleteUser = async (id) => {
+    try { 
+        await users.deleteOne({id});
+
+        return {
+            status: true
+        }
+    }
+    catch(err) {
+        return {
+            status: false
+        }
+    }
+}
+
 export {
     addNewUser,
-    authenticateUser
+    authenticateUser,
+    getAllUsers,
+    deleteUser
 }
 

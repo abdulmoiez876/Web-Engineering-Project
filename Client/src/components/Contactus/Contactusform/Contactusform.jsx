@@ -1,9 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../../assets/logo.png";
 import styles from "./contactusform.module.css";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 export default function Contactusform() {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [problem, setProblem] = useState('');
+  const [description, setDescription] = useState('');
+
+  const changeHandler = (event) => {
+    if (event.target.name === 'firstName') {
+      setFirstName(event.target.value);
+    }
+    else if (event.target.name === 'lastName') {
+      setLastName(event.target.value);
+    }
+    else if (event.target.name === 'email') {
+      setEmail(event.target.value);
+    }
+    else if (event.target.name === 'problem') {
+      setProblem(event.target.value);
+    }
+    else if (event.target.name === 'description') {
+      setDescription(event.target.value);
+    }
+  }
+
+  const submitHandler = async (event) => {
+    event.preventDefault();
+
+    axios.post("http://localhost:8000/addNewComplaint", {
+      firstName,
+      lastName,
+      email,
+      problem,
+      description
+    }).then((response) => {
+      alert(response.data.message);
+    })
+
+    setFirstName('');
+    setLastName('');
+    setEmail('');
+    setProblem('');
+    setDescription('');
+  }
+
   return (
     <>
       <div className={`${styles.container1}`}>
@@ -40,6 +85,9 @@ export default function Contactusform() {
             <div className={`form-group ${styles.namewidth}`}>
               <label for="firstname">First Name</label>
               <input
+              value={firstName}
+                onChange={changeHandler}
+                name="firstName"
                 type="text"
                 className="form-control"
                 id="firstname"
@@ -50,6 +98,9 @@ export default function Contactusform() {
             <div className={`form-group ${styles.namewidth}`}>
               <label for="lastname">Last Name</label>
               <input
+              value={lastName}
+                onChange={changeHandler}
+                name="lastName"
                 type="text"
                 className="form-control"
                 id="lastname"
@@ -61,6 +112,9 @@ export default function Contactusform() {
           <div className={`form-group mt-4 ${styles.emailpasswidth}`}>
             <label for="email">Email address</label>
             <input
+            value={email}
+              onChange={changeHandler}
+              name="email"
               type="email"
               className="form-control"
               id="email"
@@ -71,18 +125,23 @@ export default function Contactusform() {
               We'll never share your email with anyone else.
             </small>
           </div>
-          <div className={`form-group mt-4 ${styles.emailpasswidth}`}>
+          {/* <div className={`form-group mt-4 ${styles.emailpasswidth}`}>
             <label for="password">Password</label>
             <input
+              onChange={changeHandler}
+              name="password"
               type="password"
               className="form-control"
               id="password"
               placeholder="Password"
             />
-          </div>
+          </div> */}
           <div className={`form-group mt-4 ${styles.probdiscwidth}`}>
-            <label for="problem">Probelm</label>
+            <label for="problem">Problem</label>
             <input
+            value={problem}
+              onChange={changeHandler}
+              name="problem"
               type="text"
               className="form-control"
               id="problem"
@@ -91,6 +150,8 @@ export default function Contactusform() {
           </div>
           <div className={`form-group mt-4 ${styles.probdiscwidth}`}>
             <textarea
+            value={description}
+              onChange={changeHandler}
               name="description"
               id="problemdiscription"
               cols="45"
@@ -99,7 +160,7 @@ export default function Contactusform() {
               placeholder="Problem description"
             ></textarea>
           </div>
-          <button type="submit" className="btn btn-success mt-4">
+          <button onClick={submitHandler} type="submit" className="btn btn-success mt-4">
             Submit
           </button>
         </form>

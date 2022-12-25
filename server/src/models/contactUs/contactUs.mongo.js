@@ -24,6 +24,10 @@ const contactUsSchema = new mongoose.Schema({
     lastName: {
         type: String,
         required: true
+    },
+    resolved: {
+        type: Boolean,
+        required: true
     }
 });
 

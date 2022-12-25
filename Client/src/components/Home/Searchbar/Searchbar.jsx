@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./searchbar.module.css";
+import { countryCityData } from "./SearchBarData";
 
 export default function Searchbar() {
+  const [selectedCountry, setselectedCountry] = useState("United States")
+  const [selectedCities, setselectedCities] = useState([])
+  const [selectedCity, setselectedCity] = useState("New York")
+
+  useEffect(()=>{
+    setselectedCities(countryCityData[selectedCountry])
+  },[selectedCountry])
+
   return (
     <section
       className={`search-banner text-white py-3 ${styles.searchform}`}
@@ -19,13 +28,19 @@ export default function Searchbar() {
               <div className="row">
                 <div className="col-md-4">
                   <div className="form-group ">
-                    <label htmlFor="country" classNameName={styles.label}>
+                    <label htmlFor="country" className={styles.label}>
                       Country:
                     </label>
-                    <select id="country" className="form-control">
-                      <option selected>Pakistan</option>
-                      <option>America</option>
-                      <option>London</option>
+                    <select id="country" className="form-select" value={selectedCountry} onChange={(event)=>{
+                      setselectedCountry(event.target.value)
+                    }}>
+                      {console.log(countryCityData[selectedCountry])}
+                      {
+                        Object.keys(countryCityData).map((element, index)=>{
+                          
+                          return <option value={element}>{element}</option>
+                        })    
+                      }
                     </select>
                   </div>
                 </div>
@@ -34,12 +49,14 @@ export default function Searchbar() {
                     <label htmlFor="city" classNameName={styles.label}>
                       City:
                     </label>
-                    <select id="city" className="form-control">
-                      <option selected>Lahore</option>
-                      <option>Karachi</option>
-                      <option>Islamabad</option>
-                      <option>Rawalpindi</option>
-                      <option>Gujranwala</option>
+                    <select id="city" className="form-select" value={selectedCity} onChange={(event)=>{
+                      setselectedCity(event.target.value)
+                    }}>                 
+                      {
+                      selectedCities.map((city, index)=>{
+                        return <option value={city}>{city}</option>
+                      })}
+                      
                     </select>
                   </div>
                 </div>
@@ -48,7 +65,7 @@ export default function Searchbar() {
                     <label htmlFor="hotelstandard" classNameName={styles.label}>
                       Hotel:
                     </label>
-                    <select id="hotelstandard" className="form-control">
+                    <select id="hotelstandard" className="form-select">
                       <option selected>5 Star</option>
                       <option>4 Star</option>
                       <option>3 Star</option>

@@ -62,6 +62,50 @@ const addNewBooking = async (bookingData) => {
     }
 }
 
+const getAllBookings = async () => {
+    try {
+        const result = await bookings.find();
+
+        return {
+            result,
+            status: true
+        }
+    }
+    catch(err) {
+        return {
+            status: false
+        }
+    }
+}
+
+const confirmBooking = async (id) => {
+    try {
+        const response = await bookings.findOne({id});
+
+        if(response) {
+            await bookings.updateOne({id}, {
+                bookingStatus: true
+            })
+
+            return {
+                status: true
+            }
+        }
+        else {
+            return {
+                status: false
+            }
+        }
+    }
+    catch(err) {
+        return {
+            status: false
+        }
+    }
+}
+
 export {
-    addNewBooking
+    addNewBooking,
+    getAllBookings,
+    confirmBooking
 }
