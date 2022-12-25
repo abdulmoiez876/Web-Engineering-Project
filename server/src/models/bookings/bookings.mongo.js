@@ -34,7 +34,7 @@ const bookingsSchema = new mongoose.Schema({
         required: true
     },
     bookingStatus: {
-        type: String,
+        type: Boolean,
         required: true
     },
     roomType: {
