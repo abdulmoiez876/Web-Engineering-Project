@@ -1,5 +1,4 @@
-import { addNewUser } from "../../models/users/users.model.js";
-import { authenticateUser } from "../../models/users/users.model.js";
+import { addNewUser, authenticateUser, getAllUsers } from "../../models/users/users.model.js";
 
 const httpAddNewUser = async (req, res) => {
     try {
@@ -33,7 +32,19 @@ const httpAuthenticateUser = async (req, res) => {
     }
 }
 
+const httpGetAllUsers = async (req, res) => {
+    try {
+        const response = await getAllUsers();
+
+        res.status(200).send(response);
+    }
+    catch(err) {
+        res.status(406).send(err);
+    }
+}
+
 export {
     httpAddNewUser,
-    httpAuthenticateUser
+    httpAuthenticateUser,
+    httpGetAllUsers
 }
