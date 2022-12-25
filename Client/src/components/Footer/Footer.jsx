@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./footer.module.css";
-import logo from "../../assets/logo.png";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -164,52 +164,52 @@ export default function Footer() {
             <h5 className="text-success">ABOUT US</h5>
             <ul className="nav flex-column">
               <li className="nav-item mb-2">
-                <a
-                  href="#"
+                <Link
+                  to="/Aboutus"
                   className={`nav-link p-0 text-secondary ${styles.footerlink}`}
                 >
                   About Tripify
-                </a>
+                </Link>
               </li>
               <li className="nav-item mb-2">
-                <a
-                  href="#"
+                <Link
+                  to="/privacy"
                   className={`nav-link p-0 text-secondary ${styles.footerlink}`}
                 >
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li className="nav-item mb-2">
-                <a
-                  href="#"
+                <Link
+                  to="/terms"
                   className={`nav-link p-0 text-secondary ${styles.footerlink}`}
                 >
                   Terms and Conditions
-                </a>
+                </Link>
               </li>
               <li className="nav-item mb-2">
-                <a
-                  href="#"
+                <Link
+                  to="/suggestion"
                   className={`nav-link p-0 text-secondary ${styles.footerlink}`}
                 >
                   Suggestions
-                </a>
+                </Link>
               </li>
               <li className="nav-item mb-2">
-                <a
-                  href="#"
+                <Link
+                  to="/workForUs"
                   className={`nav-link p-0 text-secondary ${styles.footerlink}`}
                 >
                   Work with Us
-                </a>
+                </Link>
               </li>
               <li className="nav-item mb-2">
-                <a
-                  href="#"
+                <Link
+                  to="/Contactus"
                   className={`nav-link p-0 text-secondary ${styles.footerlink}`}
                 >
                   Contact Us
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

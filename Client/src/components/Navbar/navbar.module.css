@@ -1,10 +1,8 @@
-.navbarposition {
-  width: 100%;
+.navbar{
   position:sticky;
   top:0;
   z-index:100;
 }
-
 .navbartext {
   font-size: 1.25rem;
   font-weight: medium;
@@ -25,3 +23,7 @@
   width: 100% !important;
 }
 
+.profile{
+  display:flex;
+  flex-direction: row;
+}

@@ -52,7 +52,7 @@ export default function Cards() {
           </div>
         </div>
         <div>
-          <a className={`row ${styles.cardsrow}`} href="#">
+          <a className={`row mt-5 ${styles.cardsrow}`} href="#">
             {cardInfo.map(renderCard)}
           </a>
         </div>
