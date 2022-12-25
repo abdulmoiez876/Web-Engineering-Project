@@ -78,7 +78,34 @@ const getAllBookings = async () => {
     }
 }
 
+const confirmBooking = async (id) => {
+    try {
+        const response = await bookings.findOne({id});
+
+        if(response) {
+            await bookings.updateOne({id}, {
+                bookingStatus: true
+            })
+
+            return {
+                status: true
+            }
+        }
+        else {
+            return {
+                status: false
+            }
+        }
+    }
+    catch(err) {
+        return {
+            status: false
+        }
+    }
+}
+
 export {
     addNewBooking,
-    getAllBookings
+    getAllBookings,
+    confirmBooking
 }

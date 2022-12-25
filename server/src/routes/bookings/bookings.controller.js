@@ -1,4 +1,4 @@
-import { addNewBooking, getAllBookings } from "../../models/bookings/bookings.model.js";
+import { addNewBooking, getAllBookings, confirmBooking } from "../../models/bookings/bookings.model.js";
 
 const httpAddNewBooking = async (req, res) => {
     try {
@@ -26,7 +26,19 @@ const httpGetAllBookings = async (req, res) => {
     }
 }
 
+const httpConfirmBooking = async (req, res) => {
+    try {
+        const result = await confirmBooking(req.params.id);
+
+        res.status(200).send(result);
+    }
+    catch(err) {
+        res.status(406).send(err);
+    }
+}
+
 export {
     httpAddNewBooking,
-    httpGetAllBookings
+    httpGetAllBookings,
+    httpConfirmBooking
 }

@@ -1,11 +1,12 @@
 import React from 'react'
 import styles from './navlinks.module.css';
+import { Link } from 'react-router-dom';
 
 export default function NavLinks(props) {
     const {name, link, iconClasses} = props.linkData;
 
     return (
-    <a href='#'>
+    <Link to={props.to}>
     <div className={`${styles['nav-link-container']}`}>
         <div className={`${styles['link-icon-container']}`}>
             <i class="fas fa-calendar-alt"></i>
@@ -14,6 +15,6 @@ export default function NavLinks(props) {
             <p>{name}</p>
         </div>
     </div>
-    </a>
+    </Link>
   )
 }

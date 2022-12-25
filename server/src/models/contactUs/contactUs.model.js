@@ -70,12 +70,10 @@ const markAsResolved = async (id) => {
         });
         // console.log(result);
         if (result) {
-            contactUs.updateOne({
+            await contactUs.updateOne({
                 id
             }, {
                 resolved: true
-            }, (err, docs) => {
-                console.log("resolved");
             })
             return {
                 status: true
