@@ -62,6 +62,23 @@ const addNewBooking = async (bookingData) => {
     }
 }
 
+const getAllBookings = async () => {
+    try {
+        const result = await bookings.find();
+
+        return {
+            result,
+            status: true
+        }
+    }
+    catch(err) {
+        return {
+            status: false
+        }
+    }
+}
+
 export {
-    addNewBooking
+    addNewBooking,
+    getAllBookings
 }
