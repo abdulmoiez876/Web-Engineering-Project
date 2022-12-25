@@ -22,7 +22,7 @@ export default function Searchbar() {
                     <label htmlFor="country" classNameName={styles.label}>
                       Country:
                     </label>
-                    <select id="country" className="form-control">
+                    <select id="country" className="form-select">
                       <option selected>Pakistan</option>
                       <option>America</option>
                       <option>London</option>
@@ -34,7 +34,7 @@ export default function Searchbar() {
                     <label htmlFor="city" classNameName={styles.label}>
                       City:
                     </label>
-                    <select id="city" className="form-control">
+                    <select id="city" className="form-select">
                       <option selected>Lahore</option>
                       <option>Karachi</option>
                       <option>Islamabad</option>
@@ -48,7 +48,7 @@ export default function Searchbar() {
                     <label htmlFor="hotelstandard" classNameName={styles.label}>
                       Hotel:
                     </label>
-                    <select id="hotelstandard" className="form-control">
+                    <select id="hotelstandard" className="form-select">
                       <option selected>5 Star</option>
                       <option>4 Star</option>
                       <option>3 Star</option>

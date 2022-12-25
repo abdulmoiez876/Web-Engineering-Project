@@ -2,29 +2,22 @@ import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import { Routes, Route } from "react-router-dom";
 import Signup from "./components/Signup/Signup";
-import Cookies from "./components/Cookiespopup/Cookies";
-import Card from "./components/Home/Card/Card";
-import Footer from "./components/Footer/Footer";
-import travelPackage from "./components/Home/TravelPackage/TravelPackage";
-import Contactus from './components/Contactus/Contactus';
-import AdminNavbar from './components/Admin/AdminNavbar/AdminNavbar';
-import SpecialDeals from './components/SpecialDeals/SpecialDeals';
-import AdminDashboard from './components/Admin/AdminDashboard/AdminDashboard';
+import AdminNavbar from "./components/Admin/AdminNavbar/AdminNavbar";
+import SpecialDeals from "./components/SpecialDeals/SpecialDeals";
+import AdminDashboard from "./components/Admin/AdminDashboard/AdminDashboard";
 import DashboardCard from "./components/Admin/AdminDashboard/DashboardCard/DashboardCard";
 import AdminCustomersInfo from "./components/Admin/AdminCustomersInfo/AdminCustomersInfo";
 import Discover from "./components/Navbar/Discover/Discover";
-import Navbar from "./components/Navbar/Navbar";
 import Aboutus from "./components/Aboutus/Aboutus";
 import Contactus from "./components/Contactus/Contactus";
-import SpecialDeals from "./components/SpecialDeals/SpecialDeals";
 import WorkForUs from "./components/pages/WorkForUs/WorkForUs";
 import Suggestion from "./components/pages/Suggestion/Suggestion";
 import Terms from "./components/pages/Terms/Terms";
 import Privacy from "./components/pages/Privacy/Privacy";
 import Booking from "./components/pages/Booking/Booking";
-import AdventureTravel from "./components/Footer/TravelInterests/AdventureTravel/AdventureTravel";
-import Top from "./components/Footer/Shop/GuideBooks/Top/Top";
-import GuideBooks from "./components/Footer/Shop/GuideBooks/GuideBooks";
+import Destination from "./components/pages/Destination/Destination";
+import Bookingform from "./components/Bookingform/Bookingform";
+import Hotelcard from "./components/Hotelcard/Hotelcard";
 
 function App() {
   const dataforAdventureTravels = [
@@ -50,7 +43,7 @@ function App() {
 
   return (
     <>
-       <Routes>
+      <Routes>
         <Route path="" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/home" element={<Home />} />
@@ -68,6 +61,7 @@ function App() {
         <Route path="/terms" element={<Terms/>} />
         <Route path="/privacy" element={<Privacy/>} />
         <Route path="/booking" element={<Booking/>} />
+        <Route path="/bookingform" element={<Bookingform/>} />
       </Routes>
     </>
   );
