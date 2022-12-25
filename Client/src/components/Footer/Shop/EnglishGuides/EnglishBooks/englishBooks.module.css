@@ -12,11 +12,7 @@
 .grid{
     flex: 16%;
     max-width: 16%;
-    /* border: 1px solid black; */
-    /* height: 40vh; */
     transition: 1000ms;
-    /* overflow: hidden; */
-    /* padding: 1%; */
 }
 .bookName{
     width: 85%;
@@ -27,11 +23,7 @@
     width: 85%;
     height: 30vh; 
     object-fit: cover;
-
-    
 }
-
-
 .booksCategory{
     font-size: xx-large;
     font-weight: 700;

@@ -23,6 +23,7 @@ import UrduGuides from "./components/Footer/Shop/UrduGuides/UrduGuides";
 import EnglishBooks from "./components/Footer/Shop/EnglishGuides/EnglishBooks/EnglishBooks";
 import AdminBookings from "./components/Admin/AdminBookings/AdminBookings";
 import AdminSupport from './components/Admin/AdminSupport/AdminSupport';
+import EnglishBook from "./components/Footer/Shop/EnglishGuides/EnglishBooks/EnglishBook/EnglishBook";
 import Contactusform from "./components/Contactus/Contactusform/Contactusform";
 import Destination from "./components/pages/Destination/Destination";
 import Bookingform from "./components/Bookingform/Bookingform";
@@ -59,6 +60,7 @@ function App() {
         <Route path="/terms" element={<Terms/>} />
         <Route path="/privacy" element={<Privacy/>} />
         <Route path="/booking" element={<Booking/>} />
+        <Route path="/englishbook/:name/:image/:description/:price" element={<EnglishBook/>}/>
         <Route path="/bookingform/:id" element={<Bookingform/>} />
         <Route path="/contactUsForm" element={<Contactusform/>} />
       </Routes>
