@@ -6,5 +6,17 @@ body {
   height: 100vh;
   background-image: url(../../assets/landing.jpg);
   background-size: cover;
- 
 }
+
+.outter {
+  background-color: white;
+}
+.viewdest {
+  width: fit-content;
+}
+.viewbtn {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+

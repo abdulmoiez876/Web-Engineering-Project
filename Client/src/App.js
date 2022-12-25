@@ -2,19 +2,14 @@ import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import { Routes, Route } from "react-router-dom";
 import Signup from "./components/Signup/Signup";
-import Cookies from "./components/Cookiespopup/Cookies";
-import Card from "./components/Home/Card/Card";
-import Footer from "./components/Footer/Footer";
-import travelPackage from "./components/Home/TravelPackage/TravelPackage";
-import Contactus from './components/Contactus/Contactus';
-import AdminNavbar from './components/Admin/AdminNavbar/AdminNavbar';
-import SpecialDeals from './components/SpecialDeals/SpecialDeals';
-import AdminDashboard from './components/Admin/AdminDashboard/AdminDashboard';
+import AdminNavbar from "./components/Admin/AdminNavbar/AdminNavbar";
+import SpecialDeals from "./components/SpecialDeals/SpecialDeals";
+import AdminDashboard from "./components/Admin/AdminDashboard/AdminDashboard";
 import DashboardCard from "./components/Admin/AdminDashboard/DashboardCard/DashboardCard";
 import AdminCustomersInfo from "./components/Admin/AdminCustomersInfo/AdminCustomersInfo";
 import Discover from "./components/Navbar/Discover/Discover";
-import Navbar from "./components/Navbar/Navbar";
 import Aboutus from "./components/Aboutus/Aboutus";
+import Contactus from "./components/Contactus/Contactus";
 import WorkForUs from "./components/pages/WorkForUs/WorkForUs";
 import Suggestion from "./components/pages/Suggestion/Suggestion";
 import Terms from "./components/pages/Terms/Terms";
@@ -29,12 +24,16 @@ import EnglishBooks from "./components/Footer/Shop/EnglishGuides/EnglishBooks/En
 import AdminBookings from "./components/Admin/AdminBookings/AdminBookings";
 import AdminSupport from './components/Admin/AdminSupport/AdminSupport';
 import EnglishBook from "./components/Footer/Shop/EnglishGuides/EnglishBooks/EnglishBook/EnglishBook";
+import Contactusform from "./components/Contactus/Contactusform/Contactusform";
+import Destination from "./components/pages/Destination/Destination";
+import Bookingform from "./components/Bookingform/Bookingform";
+import Hotelcard from "./components/Hotelcard/Hotelcard";
 
 function App() {
   
   return (
     <>
-       <Routes>
+      <Routes>
         <Route path="" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/home" element={<Home />} />
@@ -62,6 +61,8 @@ function App() {
         <Route path="/privacy" element={<Privacy/>} />
         <Route path="/booking" element={<Booking/>} />
         <Route path="/englishbook/:name/:image/:description/:price" element={<EnglishBook/>}/>
+        <Route path="/bookingform" element={<Bookingform/>} />
+        <Route path="/contactUsForm" element={<Contactusform/>} />
       </Routes>
     </>
   );

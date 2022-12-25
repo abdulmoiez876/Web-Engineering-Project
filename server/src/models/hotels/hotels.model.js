@@ -23,7 +23,8 @@ const upload = multer({
     storage
 })
 
-const addNewHotel = async (hotelData, picData) => {
+// const addNewHotel = async (hotelData, picData) => {
+const addNewHotel = async (hotelData) => {
     try {
         const id = await getLatestId();
 
@@ -40,10 +41,10 @@ const addNewHotel = async (hotelData, picData) => {
             try {
                 await hotels.create({
                     id,
-                    image: {
-                        data: fs.readFileSync('uploads/' + picData.filename),
-                        contentType: "image/png"
-                    },
+                    // image: {
+                    //     data: fs.readFileSync('uploads/' + picData.filename),
+                    //     contentType: "image/png"
+                    // },
                     ...hotelData
                 })
 
@@ -66,7 +67,23 @@ const addNewHotel = async (hotelData, picData) => {
     }
 }
 
+const getAllHotels = async () => {
+    try {
+        const result = await hotels.find();
+        return {
+            result,
+            status: true
+        }
+    }
+    catch(err) {
+        return {
+            status: false
+        }
+    }
+}
+
 export {
     addNewHotel,
-    upload
+    upload,
+    getAllHotels
 }
