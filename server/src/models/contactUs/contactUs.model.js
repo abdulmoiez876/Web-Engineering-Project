@@ -25,6 +25,7 @@ const addNewComplaint = async (data) => {
             try {
                 await contactUs.create({
                     id,
+                    resolved: false,
                     ...data
                 })
 
@@ -47,6 +48,53 @@ const addNewComplaint = async (data) => {
     }
 }
 
+const getAllComplaints = async () => {
+    try {
+        const result = await contactUs.find();
+
+        return {
+            result,
+            status: true
+        }
+    } catch (err) {
+        return {
+            status: false
+        }
+    }
+}
+
+const markAsResolved = async (id) => {
+    try {
+        const result = await contactUs.findOne({
+            id
+        });
+        // console.log(result);
+        if (result) {
+            contactUs.updateOne({
+                id
+            }, {
+                resolved: true
+            }, (err, docs) => {
+                console.log("resolved");
+            })
+            return {
+                status: true
+            }
+
+        } else {
+            return {
+                status: false
+            }
+        }
+    } catch (err) {
+        return {
+            status: false
+        }
+    }
+}
+
 export {
-    addNewComplaint
+    addNewComplaint,
+    getAllComplaints,
+    markAsResolved
 }

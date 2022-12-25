@@ -1,33 +1,33 @@
-* {
-    box-sizing: border-box;
+.maincard {
+  margin: auto;
+  width: 85%;
+  height: 35vw;
+  padding: 4%;
+  background-image: url("../../assets/special-deals.jpg");
+  background-size: cover;
 }
-
-.gap {
-    height: 65px;
+.maincard h1 {
+  font-weight: 800;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 5vw;
 }
-
-.content-container {
-    padding-left: 8%;
-    padding-right: 8%;
+.maincard p {
+  font-weight: 400;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size:1.2vw ;
 }
-
-.header-container * {
-    padding: 0;
-    margin: 0;
+.smallcards {
+  width: 85%;
+  height: 100%;
+  margin: auto;
 }
-
-.header-container {
-    margin-top: 5px;
+.smallcardsrow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-
-.main-heading {
-    font-size: 3.2rem;
-}
-
-.main-para {
-    margin-top: 2px;
-    margin-bottom: 5px;
-    color: rgba(0, 0, 0, 0.6);
-
-    font-size: 1.1rem;
+.card{
+    width: 32%;
+    min-width: 250px;
 }

@@ -16,11 +16,10 @@ export default function Home() {
       <div className={`${styles.main}`}>
         <Searchbar />
       </div>
-      <div class="row"></div>
       <Card />
       <TravelPackage />
-      <Newscard/>
-      <Piccard/>
+      <Newscard />
+      <Piccard />
       <Footer />
     </>
   );

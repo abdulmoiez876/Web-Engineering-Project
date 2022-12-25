@@ -108,22 +108,22 @@ export default function Signup() {
           <div class="text-center mt-4">
             <p className="text-success">or sign up with:</p>
             <button type="button" class={`btn btn-link btn-floating mx-1 ${styles.signupicon}`}>
-              <i class="fab fa-facebook-f"></i>
+              <i className="fab fa-facebook-f"></i>
             </button>
 
             <button type="button" class={`btn btn-link btn-floating mx-1 ${styles.signupicon}`}>
-              <i class="fab fa-google"></i>
+              <i className="fab fa-google"></i>
             </button>
 
             <button type="button" class={`btn btn-link btn-floating mx-1 ${styles.signupicon}`}>
-              <i class="fab fa-twitter"></i>
+              <i className="fab fa-twitter"></i>
             </button>
 
             <button type="button" class={`btn btn-link btn-floating mx-1 ${styles.signupicon}`}>
-              <i class="fab fa-github"></i>
+              <i className="fab fa-github"></i>
             </button>
           </div>
-          <div class="text-center mt-2 d-flex justify-content-center">
+          <div className="text-center mt-2 d-flex justify-content-center">
             <p className="text-secondary m-0">Already Registered?</p><Link className={`mx-1 ${styles.loginlink}`} to='/'>Login</Link>
           </div>
         </form>

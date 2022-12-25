@@ -5,23 +5,35 @@ import Signup from "./components/Signup/Signup";
 import Cookies from "./components/Cookiespopup/Cookies";
 import Card from "./components/Home/Card/Card";
 import Footer from "./components/Footer/Footer";
-import TravelPackage from "./components/Home/TravelPackage/TravelPackage";
+import travelPackage from "./components/Home/TravelPackage/TravelPackage";
+import Contactus from './components/Contactus/Contactus';
+import AdminNavbar from './components/Admin/AdminNavbar/AdminNavbar';
+import SpecialDeals from './components/SpecialDeals/SpecialDeals';
+import AdminDashboard from './components/Admin/AdminDashboard/AdminDashboard';
+import DashboardCard from "./components/Admin/AdminDashboard/DashboardCard/DashboardCard";
+import AdminCustomersInfo from "./components/Admin/AdminCustomersInfo/AdminCustomersInfo";
 import Discover from "./components/Navbar/Discover/Discover";
-import Navbar from './components/Navbar/Navbar'
+import Navbar from "./components/Navbar/Navbar";
 import Aboutus from "./components/Aboutus/Aboutus";
-import Contactusform from "./components/Contactus/Contactusform/Contactusform";
+import WorkForUs from "./components/pages/WorkForUs/WorkForUs";
+import Suggestion from "./components/pages/Suggestion/Suggestion";
+import Terms from "./components/pages/Terms/Terms";
+import Privacy from "./components/pages/Privacy/Privacy";
+import Booking from "./components/pages/Booking/Booking";
 import AdventureTravel from "./components/Footer/TravelInterests/AdventureTravel/AdventureTravel";
 import GuideBooks from "./components/Footer/Shop/GuideBooks/GuideBooks";
 import Books from "./components/Footer/Shop/GuideBooks/Books/Books";
 import EnglishGuides from "./components/Footer/Shop/EnglishGuides/EnglishGuides"
 import UrduGuides from "./components/Footer/Shop/UrduGuides/UrduGuides";
 import EnglishBooks from "./components/Footer/Shop/EnglishGuides/EnglishBooks/EnglishBooks";
+import AdminBookings from "./components/Admin/AdminBookings/AdminBookings";
+import AdminSupport from './components/Admin/AdminSupport/AdminSupport';
 
 function App() {
   
   return (
     <>
-      <Routes>
+       <Routes>
         <Route path="" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/home" element={<Home />} />
@@ -32,8 +44,23 @@ function App() {
         <Route path="/discover" element={<Discover/>}/>
         <Route path="/englishguides" element={<EnglishGuides/>}/>
         <Route path="/urduguides" element={<UrduGuides/>}/>
+        <Route path="/admin-nav" element={<AdminNavbar />} />
+        <Route path="/admin-dash" element={<AdminDashboard />} />
+        <Route path="/special" element={<SpecialDeals />} />
+        <Route path="/cardDashboard" element={<DashboardCard />} />
+        <Route path="/customerAdmin" element={<AdminCustomersInfo />} />
+        <Route path="/adminbookings" element={<AdminBookings />} />
+        <Route path="/adminsupport" element={<AdminSupport />} />
+        <Route path="/specialDeals" element={<SpecialDeals />} />
+        <Route path="/Contactus" element={<Contactus />} />
+        <Route path="/Aboutus" element={<Aboutus />} />
+        <Route path="/workForUs" element={<WorkForUs />} />
+        <Route path="/suggestion" element={<Suggestion />} />
+        <Route path="/discover" element={<Discover />} />
+        <Route path="/terms" element={<Terms/>} />
+        <Route path="/privacy" element={<Privacy/>} />
+        <Route path="/booking" element={<Booking/>} />
       </Routes>
-
     </>
   );
 }
