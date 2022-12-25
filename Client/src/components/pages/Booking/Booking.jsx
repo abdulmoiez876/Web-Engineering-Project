@@ -13,9 +13,9 @@ export default function Booking() {
   const [selectedCities, setselectedCities] = useState([])
   const [selectedCity, setselectedCity] = useState("New York")
 
-  useEffect(()=>{
+  useEffect(() => {
     setselectedCities(countryCityData[selectedCountry])
-  },[selectedCountry])
+  }, [selectedCountry])
 
   return (
     <>
