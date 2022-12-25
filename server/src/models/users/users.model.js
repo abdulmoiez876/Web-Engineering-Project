@@ -93,9 +93,25 @@ const getAllUsers = async () => {
     }
 }
 
+const deleteUser = async (id) => {
+    try { 
+        await users.deleteOne({id});
+
+        return {
+            status: true
+        }
+    }
+    catch(err) {
+        return {
+            status: false
+        }
+    }
+}
+
 export {
     addNewUser,
     authenticateUser,
-    getAllUsers
+    getAllUsers,
+    deleteUser
 }
 
