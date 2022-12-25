@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { BsFillPersonFill } from "react-icons/bs";
 
 export default function Navbar() {
-  const [showUserDetails, setShowUserDetails] = useState(true);
+  const [showUserDetails, setShowUserDetails] = useState(false);
   // const [navbar, setNavbar] = useState(false);
   // const [navlinkcolor, setnavlinkcolor] = useState(false);
 

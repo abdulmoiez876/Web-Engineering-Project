@@ -7,8 +7,11 @@ import icon2 from "../../assets/business.png";
 import icon3 from "../../assets/feedback.png";
 import icon4 from "../../assets/partnership.png";
 import icon5 from "../../assets/inquiry.png";
+import { useNavigate } from 'react-router-dom';
 
 export default function Contactus() {
+  const navigate = useNavigate();
+
   const cardInfo = [
     {
       img: icon1,
@@ -41,7 +44,9 @@ export default function Contactus() {
   ];
   const renderCard = (card, index) => {
     return (
-      <div className={`m-0 ${styles.card}`} key={index}>
+      <div className={`m-0 ${styles.card}`} key={index} name={card.title} onClick={() => {
+        navigate('/contactUsForm')
+      }}>
         <div className={`text-center ${styles.cardicon}`}>
           <img src={card.img} alt="icon" className="w-25" />
         </div>
