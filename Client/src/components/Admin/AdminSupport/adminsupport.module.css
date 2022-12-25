@@ -1,0 +1,38 @@
+.support-container, .support-container * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar-container {
+    float: left;
+    width: 15%;
+    position: fixed;
+}
+
+.content-container {
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+.content-container > div > h1 {
+    font-size: 1.6rem;
+}
+
+.support-container {
+    margin-top: 3vh;
+    margin-left: 3vh;
+}
+
+.support-container > *:not(:first-child) {
+    margin-left: 15.3%;
+}
+
+.leftcol > div:nth-last-of-type(1) {
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+
+

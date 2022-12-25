@@ -23,6 +23,8 @@ import Booking from "./components/pages/Booking/Booking";
 import AdventureTravel from "./components/Footer/TravelInterests/AdventureTravel/AdventureTravel";
 import Top from "./components/Footer/Shop/GuideBooks/Top/Top";
 import GuideBooks from "./components/Footer/Shop/GuideBooks/GuideBooks";
+import AdminBookings from "./components/Admin/AdminBookings/AdminBookings";
+import AdminSupport from './components/Admin/AdminSupport/AdminSupport';
 
 function App() {
   const dataforAdventureTravels = [
@@ -57,6 +59,8 @@ function App() {
         <Route path="/special" element={<SpecialDeals />} />
         <Route path="/cardDashboard" element={<DashboardCard />} />
         <Route path="/customerAdmin" element={<AdminCustomersInfo />} />
+        <Route path="/adminbookings" element={<AdminBookings />} />
+        <Route path="/adminsupport" element={<AdminSupport />} />
         <Route path="/specialDeals" element={<SpecialDeals />} />
         <Route path="/Contactus" element={<Contactus />} />
         <Route path="/Aboutus" element={<Aboutus />} />
