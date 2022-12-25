@@ -13,8 +13,11 @@ export default function AdminBookings() {
       hotel: 'Continental',
       booking: 'active',
       roomtype: 'Single',
+      roomNo: '001',
       arrive: '10-02-2020',
       payment: 'Paid',
+      country: 'Pakistan',
+      city: 'Islamabad',
     };
     const users = [user, user, user, user, user];
 
@@ -37,9 +40,12 @@ export default function AdminBookings() {
               <th scope="col">Hotel</th>
               <th scope="col">Booking</th>
               <th scope="col">Room Type</th>
-              <th scope="col">Arrive</th>
+              <th scope="col">Room No</th>
+              <th scope="col">Arrival Date</th>
               <th scope="col">Payment</th>
-              <th scope="edit">Edit</th>
+              <th scope="col">Country</th>
+              <th scope="col">City</th>
+              <th scope="col">Edit</th>
             </tr>
           </thead>
           <tbody>
@@ -50,8 +56,11 @@ export default function AdminBookings() {
               <td>{user.hotel}</td>
               <td>{user.booking}</td>
               <td>{user.roomtype}</td>
+              <td>{user.roomNo}</td>
               <td>{user.arrive}</td>
               <td>{user.payment}</td>
+              <td>{user.country}</td>
+              <td>{user.city}</td>
               <td><button type="button" className={`${styles.btnEdit} btn btn-primary`}>Edit</button></td>
             </tr>
           })}

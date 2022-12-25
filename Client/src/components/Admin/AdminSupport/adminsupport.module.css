@@ -41,13 +41,3 @@ table {
 .btnDelete {
     padding: 4px;
 }
-
-.btnUpdate {
-    display: inline-block;
-    /* padding: 4px; */
-}
-
-.btnUpdateContainer {
-    margin-top: 20px;
-    padding-left: 32px;
-}
