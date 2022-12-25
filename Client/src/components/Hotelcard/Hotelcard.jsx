@@ -3,8 +3,12 @@ import styles from "./hotelcard.module.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-export default function Hotelcard() {
+export default function Hotelcard(props) {
   const [hotels, setHotels] = useState([]);
+  const country = props.country;
+  const city = props.city;
+
+  console.log(country, city);
 
   useEffect(() => {
     axios.get('http://localhost:8000/getAllHotels').then((response) => {
@@ -15,6 +19,7 @@ export default function Hotelcard() {
   }, [])
 
   const renderCard = (card, index) => {
+
     // const base64String = btoa(String.fromCharCode(...new Uint8Array((card.image.data.data))))
     return (
       <div className={` card ${styles.hotelcard}`} key={index}>
@@ -43,7 +48,7 @@ export default function Hotelcard() {
             </p>
             &nbsp;<p>{card.city}</p>
           </div>
-          <Link to="/bookingform" class="btn btn-success">
+          <Link to={`/bookingform/${card.id}`} class="btn btn-success">
             Explore
           </Link>
         </div>

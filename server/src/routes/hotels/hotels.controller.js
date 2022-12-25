@@ -1,6 +1,7 @@
 import {
     addNewHotel,
-    getAllHotels
+    getAllHotels,
+    getHotelById
 } from "../../models/hotels/hotels.model.js";
 
 const httpAddNewHotel = async (req, res) => {
@@ -28,7 +29,18 @@ const httpGetAllHotels = async (req, res) => {
     }
 }
 
+const httpGetHotelById = async (req, res) => {
+    try {
+        const response = await getHotelById(req.params.id);
+        res.status(200).send(response);
+    }
+    catch(err) {
+        res.status(404).send(err);
+    }
+}
+
 export {
     httpAddNewHotel,
-    httpGetAllHotels
+    httpGetAllHotels,
+    httpGetHotelById
 }

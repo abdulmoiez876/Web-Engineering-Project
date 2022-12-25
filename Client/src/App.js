@@ -59,7 +59,7 @@ function App() {
         <Route path="/terms" element={<Terms/>} />
         <Route path="/privacy" element={<Privacy/>} />
         <Route path="/booking" element={<Booking/>} />
-        <Route path="/bookingform" element={<Bookingform/>} />
+        <Route path="/bookingform/:id" element={<Bookingform/>} />
         <Route path="/contactUsForm" element={<Contactusform/>} />
       </Routes>
     </>

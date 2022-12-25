@@ -107,7 +107,7 @@ export default function Booking() {
           </div>
         </div>
         <div className={`col-9 ${styles.right}`}>
-          <Hotelcard />
+          <Hotelcard country={selectedCountry} city={selectedCity}/>
         </div>
       </div>
       <Footer />

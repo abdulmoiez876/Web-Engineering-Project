@@ -82,8 +82,32 @@ const getAllHotels = async () => {
     }
 }
 
+const getHotelById = async (id) => {
+    try {
+        const result = await hotels.findOne({id});
+
+        if(result) {
+            return {
+                result,
+                status: true
+            }
+        }
+        else {
+            return {
+                status: false
+            }
+        }
+    }
+    catch(err) {
+        return {
+            status: false
+        }
+    }
+}
+
 export {
     addNewHotel,
     upload,
-    getAllHotels
+    getAllHotels,
+    getHotelById
 }
