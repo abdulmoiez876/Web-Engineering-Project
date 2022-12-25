@@ -51,19 +51,6 @@ function App() {
         <Route path="/cardDashboard" element={<DashboardCard />} />
         <Route path="/customerAdmin" element={<AdminCustomersInfo />} />
       </Routes>
-      {/* <Home/> */}
-      {/* <AdventureTravel dataforAdventureTravels={dataforAdventureTravels}/> */}
-      <GuideBooks />
-      {/* <Top topImage1={topImage1} continentsImages={continentsImages}/> */}
-      {/* <Navbar /> */}
-      {/* 
-      <Navbar /> */}
-      {/* <Signup /> */}
-      {/* <Cookies/> */}
-      {/* <Card/> */}
-      {/* <Footer /> */}
-      {/* <TravelPackage/> */}
-      <Contactus/>
     </>
   );
 }
