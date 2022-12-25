@@ -4,10 +4,13 @@ import styles from './englishBooks.module.css'
 import Navbar from '../../../../Navbar/Navbar'
 import { useParams } from 'react-router-dom'
 import Footer from '../../../Footer'
+import { useNavigate } from 'react-router-dom'
 // import { categoryBackground } from './BooksData'
 
 function EnglishBooks() {
-    const params = useParams();
+  const navigate = useNavigate();
+  const params = useParams();
+
   return (
     <>
     <Navbar/>
@@ -17,7 +20,7 @@ function EnglishBooks() {
             {booksData.map((element, index)=>{
                 return <div className={styles.grid}>
                    
-                        <img className={styles.bookImage} src={element["image"]}></img>
+                        <img onClick={()=>{navigate(`/englishbook/${element.name}/${element.imageString}/${element.description}/${element.price}`)}}  className={styles.bookImage} src={element["image"]}></img>
                       
                         <p className={styles.bookName}>{element["name"]}</p>
                 
