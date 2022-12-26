@@ -29,6 +29,7 @@ import Destination from "./components/pages/Destination/Destination";
 import Bookingform from "./components/Bookingform/Bookingform";
 import Hotelcard from "./components/Hotelcard/Hotelcard";
 import AdminHotels from './components/Admin/AdminHotels/AdminHotels';
+import AddHotel from "./components/Admin/AdminHotels/AddHotel/AddHotel";
 
 function App() {
   
@@ -65,6 +66,7 @@ function App() {
         <Route path="/bookingform/:id" element={<Bookingform/>} />
         <Route path="/contactUsForm" element={<Contactusform/>} />
         <Route path="/adminHotel" element={<AdminHotels/>} />
+        <Route path="/addHotel" element={<AddHotel />} />
       </Routes>
     </>
   );
