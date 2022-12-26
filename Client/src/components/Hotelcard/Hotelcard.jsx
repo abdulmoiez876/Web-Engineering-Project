@@ -5,10 +5,12 @@ import axios from "axios";
 
 export default function Hotelcard(props) {
   const [hotels, setHotels] = useState([]);
+  const [hotelsFiltered, setHotelsFiltered] = useState([]);
   const country = props.country;
   const city = props.city;
 
   console.log(country, city);
+  console.log(hotels);
 
   useEffect(() => {
     axios.get('http://localhost:8000/getAllHotels').then((response) => {
@@ -17,6 +19,22 @@ export default function Hotelcard(props) {
       }
     })
   }, [])
+  
+  useEffect(() => {
+    // console.log(hotels);
+    setHotelsFiltered((prev)=> {
+      const array = hotels.filter(prevItem => prevItem.country === country)
+      return array;
+    })
+  }, [country])
+
+  useEffect(() => {
+    // console.log(hotels);
+    setHotelsFiltered((prev)=> {
+      const array = hotels.filter(prevItem => prevItem.city === city)
+      return array;
+    })
+  }, [city])
 
   const renderCard = (card, index) => {
 
@@ -58,7 +76,7 @@ export default function Hotelcard(props) {
 
   return (
     <>
-      <div className={`${styles.cardsRow}`}>{hotels.map(renderCard)}</div>
+      <div className={`${styles.cardsRow}`}>{hotelsFiltered.map(renderCard)}</div>
     </>
   );
 }
