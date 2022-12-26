@@ -28,6 +28,7 @@ import Contactusform from "./components/Contactus/Contactusform/Contactusform";
 import Destination from "./components/pages/Destination/Destination";
 import Bookingform from "./components/Bookingform/Bookingform";
 import Hotelcard from "./components/Hotelcard/Hotelcard";
+import AdminHotels from './components/Admin/AdminHotels/AdminHotels';
 
 function App() {
   
@@ -63,6 +64,7 @@ function App() {
         <Route path="/englishbook/:name/:image/:description/:price" element={<EnglishBook/>}/>
         <Route path="/bookingform/:id" element={<Bookingform/>} />
         <Route path="/contactUsForm" element={<Contactusform/>} />
+        <Route path="/adminHotel" element={<AdminHotels/>} />
       </Routes>
     </>
   );
