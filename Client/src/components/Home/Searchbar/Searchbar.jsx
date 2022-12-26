@@ -19,7 +19,7 @@ export default function Searchbar() {
       <div className="container py-5 my-5">
         <div className={styles.child}>
           <div className="row">
-          <h2 className={`text-white text-center mb-5 ${styles.searchbarheading}`}>
+          <h2 className={`text-light text-center mb-5 ${styles.searchbarheading}`}>
             Explore The World With a Smile
           </h2>
           </div>

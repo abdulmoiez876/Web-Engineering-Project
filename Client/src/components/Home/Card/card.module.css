@@ -7,10 +7,10 @@
 .piccard {
   height: 100% !important;
   width: 100% !important;
-  background-image: url("../../../assets/login.jpg");
-  background-size: cover;
+  /* background-image: url("../../../assets/islamabad.jpg"); */
+  /* background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
   transition: 0.5s;
   border-radius: 1.5rem;
 }
@@ -28,19 +28,23 @@
   top: 0;
   left: 0;
   border-radius: 1.5rem;
-  background-color: rgba(0, 128, 0, 0.233);
+  background-color: rgba(0, 0, 0, 0.233);
 }
 .parent:hover .piccard::before,
 .parent:focus .piccard::before {
   display: block;
 }
-
+.cardcontent{
+  position: relative;
+  bottom: 30%;
+  text-decoration: none;
+}
 .cardtitle {
   font-size: 2vw;
   font-weight: 600;
   color: white;
-  position: relative;
-  bottom: 50%;
+  /* position: relative;
+  bottom: 50%; */
   font-family: open sans-serif;
   text-decoration: none;
 }
@@ -52,8 +56,8 @@
   width: 6vw !important;
   color: white;
   background-color: #0000001c;
-  position: relative;
-  bottom: 50%;
+  /* position: relative;
+  bottom: 50%; */
   font-family: open sans-serif;
   border-radius: 2rem !important;
   display: flex;
@@ -64,4 +68,12 @@
 .cardsrow {
   justify-content: space-between;
   text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.parent{
+  min-height:350px;
+  min-width: 300px;
+  margin-top:5%;
 }

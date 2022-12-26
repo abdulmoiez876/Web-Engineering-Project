@@ -5,41 +5,49 @@ import cardPic from "../../../assets/login.jpg";
 export default function Cards() {
   const cardInfo = [
     {
-      title: "Northern Pakistan1",
+      title: "Dubai",
       btntext: "Explore",
+      img: require("../../../assets/dubai.jpg"),
     },
     {
-      title: "Northern Pakistan2",
+      title: "Shinghai",
       btntext: "Explore",
+      img: require("../../../assets/shinghai.jpg"),
     },
     {
-      title: "Northern Pakistan3",
+      title: "Islamabad",
       btntext: "Explore",
+      img: require("../../../assets/islamabad.jpg"),
     },
     {
-      title: "Northern Pakistan4",
+      title: "New York",
       btntext: "Explore",
+      img: require("../../../assets/newyork.jpg"),
     },
   ];
   const renderCard = (card, index) => {
     return (
-      <div className={`${styles.parent} p-0`}>
-        <div className={`col-md-4 card ${styles.piccard}`} key={index}></div>
-        <h2 className={`card-title m-4 text-light ${styles.cardtitle}`}>
-          {card.title}
-        </h2>
-        <button
-          className={`btn btn-outline-light m-4 text-center ${styles.cardbtn}`}
-        >
-          {card.btntext}
-        </button>
+      <div className={`${styles.parent} p-0`} key={index}>
+        <div className={`col-md-4 card ${styles.piccard}`}>
+          <img src={card.img} alt="" />
+        </div>
+        <div className={`${styles.cardcontent}`}>
+          <h2 className={`card-title mx-4 text-light ${styles.cardtitle}`}>
+            {card.title}
+          </h2>
+          <button
+            className={`btn btn-outline-light mx-4 mt-2 text-center ${styles.cardbtn}`}
+          >
+            {card.btntext}
+          </button>
+        </div>
       </div>
     );
   };
 
   return (
     <>
-      <a className={`row mt-5 ${styles.cardsrow}`} href="#">
+      <a className={`row ${styles.cardsrow}`} href="#">
         {cardInfo.map(renderCard)}
       </a>
     </>

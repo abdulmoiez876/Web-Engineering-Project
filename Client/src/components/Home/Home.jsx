@@ -6,8 +6,8 @@ import Navbar from "./../Navbar/Navbar";
 import Card from "./Card/Card";
 import Footer from "../Footer/Footer";
 import TravelPackage from "./TravelPackage/TravelPackage";
-import Newscard from "./Card/Newscard";
 import Piccard from "./Card/Piccard";
+import Subscribe from "../Subscribe/Subscribe";
 
 export default function Home() {
   return (
@@ -29,13 +29,36 @@ export default function Home() {
           </div>
         </div>
         <div>
-        <Card />
+          <Card />
         </div>
       </div>
-      
       <TravelPackage />
-      <Newscard />
       <Piccard />
+      <Subscribe />
+      <div className={`row ${styles.partnersrow}`}>
+        <h2 className="text-center text-success mb-5">OUR PARTNERS</h2>
+          <div className={`col ${styles.plogoDiv}`}>
+            <img src={require("../../assets/bookme.png")} alt="" />
+          </div>
+          <div className={`col ${styles.plogoDiv}`}>
+            <img src={require("../../assets/delta.png")} alt="" />
+          </div>
+          <div className={`col ${styles.plogoDiv}`}>
+            <img src={require("../../assets/emirates.png")} alt="" />
+          </div>
+          <div className={`col ${styles.plogoDiv}`}>
+            <img src={require("../../assets/malaysia.png")} alt="" />
+          </div>
+          <div className={`col ${styles.plogoDiv}`}>
+            <img src={require("../../assets/qatar.png")} alt="" />
+          </div>
+          <div className={`col ${styles.plogoDiv}`}>
+            <img src={require("../../assets/singapore.png")} alt="" />
+          </div>
+          <div className={`col ${styles.plogoDiv}`}>
+            <img src={require("../../assets/turkish.png")} alt="" />
+          </div>
+      </div>
       <Footer />
     </>
   );

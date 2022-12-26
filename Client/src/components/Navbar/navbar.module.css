@@ -1,7 +1,7 @@
-.navbar{
-  position:sticky;
-  top:0;
-  z-index:100;
+.navbar {
+  position: fixed;
+  top: 0;
+  z-index:10;
 }
 .navbartext {
   font-size: 1.25rem;
@@ -23,8 +23,8 @@
   width: 100% !important;
 }
 
-.profile{
-  display:flex;
+.profile {
+  display: flex;
   flex-direction: row;
   column-gap: 10px;
 }
@@ -34,7 +34,7 @@
   width: 300px;
   height: 200px;
   background-color: white;
-  right: -115px;
+  right: 0.5%;
   top: 100%;
   border-radius: 5%;
   padding: 2%;

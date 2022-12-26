@@ -89,15 +89,27 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className="nav-item">
-                <a className={`nav-link text-dark ${styles.navbartext} mx-4`}>
+                <Link to="/aboutus" className={`nav-link text-dark ${styles.navbartext} mx-4`}>
                   About Us
-                </a>
+                </Link>
               </li>
             </ul>
+            <div className={`${styles.profile}`}>
+              <Link className="btn btn-success me-2" to="/login">
+                Login
+              </Link>
+              <a
+                type="button"
+                onClick={() => {
+                  setShowUserDetails(!showUserDetails);
+                }}
+              >
+                <BsFillPersonFill className="display-6" />
+              </a>
+            </div>
           </div>
         </div>
-        {
-          showUserDetails &&
+        {showUserDetails && (
           <div className={`${styles.userDetails}`}>
             <div className={`${styles.flex}`}>
               <h6>Name: </h6>
@@ -113,15 +125,8 @@ export default function Navbar() {
             </div>
             <button className="btn btn-danger">Logout</button>
           </div>
-        }
+        )}
       </nav>
-      <div className={`${styles.profile}`}>
-        <button className="btn btn-success me-2">Login</button>
-        <a type="button" onClick={() => { setShowUserDetails(!showUserDetails) }}>
-          <BsFillPersonFill className="display-6" />
-        </a>
-      </div>
-
     </div>
   );
 }
