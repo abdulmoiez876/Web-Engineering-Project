@@ -45,7 +45,7 @@ export default function AdminNavbar() {
       <hr />
       <div className={`${styles.gap}`}></div>
       <NavLink to='/admin-dash' linkData={linksData.dashboard} />
-      <NavLink to='' linkData={linksData.hotels} />
+      <NavLink to='/adminHotel' linkData={linksData.hotels} />
       <NavLink to='/adminbookings' linkData={linksData.bookings} />
       <NavLink to='/customerAdmin' linkData={linksData.customers} />
       <NavLink to='/adminSupport' linkData={linksData.support} />

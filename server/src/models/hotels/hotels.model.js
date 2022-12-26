@@ -105,9 +105,34 @@ const getHotelById = async (id) => {
     }
 }
 
+const deleteHotelById = async (id) => {
+    try {
+        const result = await hotels.deleteOne({id});
+
+        if(result.deletedCount === 1) {
+            return {
+                message: "Hotel Deleted Successfully!",
+                status: true
+            }
+        }
+        else {
+            return {
+                message: "Hotel Not Found!",
+                status: true
+            }
+        }
+    }
+    catch(err) {
+        return {
+            status: false
+        }
+    }
+}
+
 export {
     addNewHotel,
     upload,
     getAllHotels,
-    getHotelById
+    getHotelById,
+    deleteHotelById
 }
