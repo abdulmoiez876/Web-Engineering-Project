@@ -1,22 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styles from "./login.module.css";
 import loginPic from "../../assets/loginpage.jpg";
 import logo from "../../assets/logo.png";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import userContext from "../../store/userContext/userContext";
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [authenticated, setAuthenticated] = useState(false);
   const [authenticationMessage, setAuthenticationMessage] = useState('');
-  const [id, setId] = useState();
+  const userDetails = useContext(userContext);
 
   const navigate = useNavigate();
 
   useEffect(() => {
     if (authenticated) {
-      navigate(`/home?id=${id}`);
+      navigate(`/home`);
     }
   }, [authenticated])
 
@@ -37,7 +38,9 @@ export default function Login() {
     }).then((response) => {
       setAuthenticationMessage(response.data.message);
       if (response.data.status) {
-        setId(response.data.result.id);
+        userDetails.firstName = response.data.result.firstName;
+        userDetails.lastName = response.data.result.lastName;
+        userDetails.email = response.data.result.email;
         setAuthenticated(true);
       }
       else {
