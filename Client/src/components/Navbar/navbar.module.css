@@ -46,7 +46,7 @@
 }
 
 .flex {
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   display: flex;
   align-items: center;
   column-gap: 10px;

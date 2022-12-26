@@ -49,8 +49,10 @@ const addNewUser = async (userData) => {
 const authenticateUser = async (userData) => {
     try {
         if(await users.findOne({email: userData.email})) {
-            if(await users.findOne({email: userData.email, password: userData.password})) {
+            const result = await users.findOne({email: userData.email, password: userData.password}); 
+            if(result) {
                 return {
+                    result,
                     status: true,
                     message: "User verified successfully!"
                 }

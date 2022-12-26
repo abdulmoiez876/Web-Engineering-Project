@@ -18,13 +18,12 @@
 
 }
 .innerdiv {
-  width: 25vw;
-  min-width: 365px;
+  max-width: 25vw;
   filter: drop-shadow(5px 5px 5px #00000065);
 }
 @media(max-width: 1361px){
   .innerdiv{
-    min-width: 600px;
+    max-width: 600px;
     margin-top: 2%;
   }
   
@@ -38,7 +37,7 @@
 }
 .imgText {
   position:absolute;
-  top: 35%;
+  top: 30%;
 }
 @media(max-width: 1361px){
   .imgText{
@@ -57,14 +56,13 @@
     flex-wrap: wrap;
   }
   .innerdiv2{
-    width: 40vw;
+    max-width: 40vw;
     filter: drop-shadow(5px 5px 5px #00000065);
-    min-width: 500px;
   }
 
   @media(max-width: 1361px){
     .innerdiv2 {
-      min-width: 600px;
+      max-width: 600px;
       margin-top: 2%;
     }
   }
