@@ -1,0 +1,18 @@
+.c3card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    min-width: 350px;
+  }
+  .subscribe{
+    width: 65%;
+  }
+  .colum{
+    min-width: 300px;
+  }
+  @media(max-width:768px){
+    .c3card button{
+      margin-top:2%;
+    }
+  }

@@ -1,3 +1,14 @@
 .footerlink:hover {
     color:white !important;
 }
+.row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.columns{
+    min-width: 200px;
+}
+.subscribe{
+    min-width:300px;
+}
