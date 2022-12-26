@@ -2,7 +2,8 @@ import {
     addNewHotel,
     getAllHotels,
     getHotelById,
-    deleteHotelById
+    deleteHotelById,
+    editHotelById
 } from "../../models/hotels/hotels.model.js";
 
 const httpAddNewHotel = async (req, res) => {
@@ -42,8 +43,16 @@ const httpDeleteHotelById = async (req, res) => {
     try {
         const response = await deleteHotelById(req.params.id);
         res.status(200).send(response)
+    } catch (err) {
+        res.status(404).send(err);
     }
-    catch(err) {
+}
+
+const httpEditHotelById = async (req, res) => {
+    try {
+        const response = await editHotelById(req.params.id, req.body)
+        res.status(200).send(response)
+    } catch (err) {
         res.status(404).send(err);
     }
 }
@@ -52,5 +61,6 @@ export {
     httpAddNewHotel,
     httpGetAllHotels,
     httpGetHotelById,
-    httpDeleteHotelById
+    httpDeleteHotelById,
+    httpEditHotelById
 }

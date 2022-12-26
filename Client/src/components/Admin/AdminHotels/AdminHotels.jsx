@@ -2,11 +2,14 @@ import React, { useState, useEffect } from 'react'
 import styles from './adminhotel.module.css';
 import AdminNavbar from '../AdminNavbar/AdminNavbar';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export default function AdminHotels() {
   const [hotels, setHotels] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [numberOfHotels, setNumberOfHotels] = useState(0);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios.get('http://localhost:8000/getAllHotels').then((response) => {
@@ -41,12 +44,14 @@ export default function AdminHotels() {
       <div className={`${styles["sidebar-container"]}`}>
         <AdminNavbar className={`${styles.nav}`} />
       </div>
-
       <div className={`${styles.hotelHeading}`}>
         <h1>Hotels's List</h1>
         {!isLoading &&
           <p>You have total {numberOfHotels} hotels.</p>
         }
+        <button style={{ padding: '5px' }} className="btn btn-primary" onClick={() => {
+          navigate('/addHotel')
+        }}>Add Hotel</button>
       </div>
       <div className={`${styles.hotelsTableContainer}`}>
         <table className="table table-striped">
@@ -75,7 +80,9 @@ export default function AdminHotels() {
                   <td>{hotel.city}</td>
                   <td>{hotel.country}</td>
                   <td><button type="button" onClick={deleteHotel} name={hotel.id} className={`${styles.btnDelete} btn btn-danger`}>Delete</button></td>
-                  <td><button type="button" className={`${styles.btnEdit} btn btn-primary`}>Edit</button></td>
+                  <td><button onClick={() => {
+                    navigate(`/editHotel/${hotel.id}`)
+                  }} type="button" className={`${styles.btnEdit} btn btn-primary`}>Edit</button></td>
                 </tr>
               })}
             </tbody>

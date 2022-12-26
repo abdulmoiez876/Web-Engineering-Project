@@ -3,7 +3,8 @@ import {
     httpAddNewHotel,
     httpGetAllHotels,
     httpGetHotelById,
-    httpDeleteHotelById
+    httpDeleteHotelById,
+    httpEditHotelById
 } from './hotels.controller.js';
 import {
     upload
@@ -15,6 +16,7 @@ hotelsRouter.post('/addNewHotel', upload.single('image'), httpAddNewHotel);
 hotelsRouter.get('/getAllHotels', httpGetAllHotels);
 hotelsRouter.get('/getHotelById/:id', httpGetHotelById);
 hotelsRouter.get('/deleteHotelById/:id', httpDeleteHotelById);
+hotelsRouter.post('/editHotelById/:id', httpEditHotelById);
 
 export {
     hotelsRouter

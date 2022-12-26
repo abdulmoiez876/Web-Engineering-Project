@@ -129,10 +129,40 @@ const deleteHotelById = async (id) => {
     }
 }
 
+const editHotelById = async (id, hotelData) => {
+    try {
+        const hotel = await hotels.findOne({id});
+
+        if(hotel) {
+            await hotels.updateOne({id}, {
+                id,
+                ...hotelData
+            })
+            return {
+                status: true,
+                message: "Hotel updated successfully!"
+            }
+        }
+        else {
+            return {
+                status: false,
+                message: "Hotel Not Found!"
+            }
+        }
+    }
+    catch(err) {
+        return {
+            status: false,
+            message: "Hotel not updated, Please try again later!"
+        }
+    }
+}
+
 export {
     addNewHotel,
     upload,
     getAllHotels,
     getHotelById,
-    deleteHotelById
+    deleteHotelById,
+    editHotelById
 }
