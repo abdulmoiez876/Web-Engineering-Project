@@ -8,15 +8,11 @@ import Footer from "../Footer/Footer";
 import TravelPackage from "./TravelPackage/TravelPackage";
 import Piccard from "./Card/Piccard";
 import Subscribe from "../Subscribe/Subscribe";
-import { useSearchParams } from "react-router-dom";
 
 export default function Home() {
-  const [searchParams, setSearchParams] = useSearchParams();
-
-  const userId = searchParams.get('id')
   return (
     <>
-      <Navbar userId={userId}/>
+      <Navbar/>
       <div className={`${styles.main}`}>
         <Searchbar />
       </div>

@@ -65,7 +65,7 @@ export default function AdminBookings() {
           <tbody>
             {bookings.map((user, index) => {
               return <tr>
-                <th scope="row">{user.id}</th>
+                <th scope="row">{index + 1}</th>
                 <td>{user.customerName}</td>
                 <td>{user.customerEmail}</td>
                 <td>{user.customerContactNumber}</td>

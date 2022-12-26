@@ -1,18 +1,40 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './adminhotel.module.css';
 import AdminNavbar from '../AdminNavbar/AdminNavbar';
+import axios from 'axios';
 
 export default function AdminHotels() {
-    const numHotels = 2000;
-    
-  const hotel = {
-    name: 'Kanloop Cottages',
-    rooms: 20,
-    availableRooms: 10,
-    city: 'Shogran',
-    country: 'Pakistan',
-  };
-  const hotels = [hotel, hotel, hotel, hotel, hotel];
+  const [hotels, setHotels] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [numberOfHotels, setNumberOfHotels] = useState(0);
+
+  useEffect(() => {
+    axios.get('http://localhost:8000/getAllHotels').then((response) => {
+      if (response.data.status) {
+        setHotels(response.data.result);
+        setNumberOfHotels(response.data.result.length);
+        setIsLoading(false);
+      }
+    })
+  }, [])
+
+  const deleteHotel = async (event) => {
+    setIsLoading(true);
+    axios.request(`http://localhost:8000/deleteHotelById/${event.target.name}`).then((response) => {
+      if (response.data.status) {
+        axios.get('http://localhost:8000/getAllHotels').then((response) => {
+          if (response.data.status) {
+            setHotels(response.data.result);
+            setNumberOfHotels(response.data.result.length);
+            setIsLoading(false);
+          }
+        })
+      }
+    }).catch(err => {
+      setIsLoading(false);
+      alert(err);
+    })
+  }
 
   return (
     <div className={`${styles["hotels-container"]}`}>
@@ -22,7 +44,9 @@ export default function AdminHotels() {
 
       <div className={`${styles.hotelHeading}`}>
         <h1>Hotels's List</h1>
-        <p>You have total {numHotels} hotels.</p>
+        {!isLoading &&
+          <p>You have total {numberOfHotels} hotels.</p>
+        }
       </div>
       <div className={`${styles.hotelsTableContainer}`}>
         <table className="table table-striped">
@@ -38,20 +62,24 @@ export default function AdminHotels() {
               <th scope="edit">Edit</th>
             </tr>
           </thead>
-          <tbody>
-            {hotels.map((hotel, index) => {
-              return <tr>
-                <th scope="row">{index + 1}</th>
-                <td>{hotel.name}</td>
-                <td>{hotel.rooms}</td>
-                <td>{hotel.availableRooms}</td>
-                <td>{hotel.city}</td>
-                <td>{hotel.country}</td>
-                <td><button type="button" className={`${styles.btnDelete} btn btn-danger`}>Delete</button></td>
-                <td><button type="button" className={`${styles.btnEdit} btn btn-primary`}>Edit</button></td>
-              </tr>
-            })}
-          </tbody>
+          {isLoading && <h1>Loading...</h1>}
+          {
+            !isLoading &&
+            <tbody>
+              {hotels.map((hotel, index) => {
+                return <tr>
+                  <th scope="row">{index + 1}</th>
+                  <td>{hotel.name}</td>
+                  <td>{hotel.numberOfAvailableRooms}</td>
+                  <td>{hotel.numberOfRooms}</td>
+                  <td>{hotel.city}</td>
+                  <td>{hotel.country}</td>
+                  <td><button type="button" onClick={deleteHotel} name={hotel.id} className={`${styles.btnDelete} btn btn-danger`}>Delete</button></td>
+                  <td><button type="button" className={`${styles.btnEdit} btn btn-primary`}>Edit</button></td>
+                </tr>
+              })}
+            </tbody>
+          }
         </table>
       </div>
     </div>

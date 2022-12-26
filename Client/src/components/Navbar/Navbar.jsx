@@ -1,35 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import styles from "./navbar.module.css";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import { BsFillPersonFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import userContext from "../../store/userContext/userContext";
 
-export default function Navbar(props) {
+export default function Navbar() {
   const [showUserDetails, setShowUserDetails] = useState(false);
-  const [userDetails, setUserDetails] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-  });
-  // const [navbar, setNavbar] = useState(false);
-  // const [navlinkcolor, setnavlinkcolor] = useState(false);
   const navigate = useNavigate();
-  
-  useEffect(() => {
-    const id = props.userId;
-    axios.get(`http://localhost:8000/getUserById/${id}`).then((response) => {
-      if(response.data.status) {
-        setUserDetails({
-          firstName: response.data.result.firstName,
-          lastName: response.data.result.lastName,
-          email: response.data.result.email
-        });
-        console.log(response.data.result.email);
-      }
-    })
-  }, [])
+  const userDetails = useContext(userContext);
 
   return (
     <div className={`d-flex bg-light align-items-center`}>
@@ -118,8 +98,8 @@ export default function Navbar(props) {
               <h6>{userDetails.email}</h6>
             </div>
             <div className={`${styles.flex}`}>
-              <h6>Contact: </h6>
-              <h6>03430810984</h6>
+              {/* <h6>Contact: </h6>
+              <h6>03430810984</h6> */}
             </div>
             <button className="btn btn-danger" onClick={() => {
               navigate('/');
