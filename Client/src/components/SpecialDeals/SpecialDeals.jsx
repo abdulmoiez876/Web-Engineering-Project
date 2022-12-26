@@ -2,6 +2,7 @@ import { React } from "react";
 import styles from "./specialdeals.module.css";
 import Footer from "../Footer/Footer";
 import mainpic from "../../assets/special-deals.jpg";
+import Navbar from './../Navbar/Navbar';
 
 export default function SpecialDeals() {
   const cardInfo = [
@@ -70,6 +71,7 @@ export default function SpecialDeals() {
 
   return (
     <>
+      <Navbar/>
       <div className={`card rounded-4 jumbotron my-5 ${styles.maincard}`}>
         <div className={`${styles.details} w-50 text-light`}>
           <h1 className="">Special Deals!</h1>

@@ -3,11 +3,13 @@ import styles from "./navbar.module.css";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import { BsFillPersonFill } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [showUserDetails, setShowUserDetails] = useState(false);
   // const [navbar, setNavbar] = useState(false);
   // const [navlinkcolor, setnavlinkcolor] = useState(false);
+  const navigate = useNavigate();
 
   // const changeBackground = () => {
   //   console.log(window.scrollY);
@@ -111,12 +113,14 @@ export default function Navbar() {
               <h6>Contact: </h6>
               <h6>03430810984</h6>
             </div>
-            <button className="btn btn-danger">Logout</button>
+            <button className="btn btn-danger" onClick={() => {
+              navigate('/');
+            }}>Logout</button>
           </div>
         }
       </nav>
       <div className={`${styles.profile}`}>
-        <button className="btn btn-success me-2">Login</button>
+        {/* <button className="btn btn-success me-2">Login</button> */}
         <a type="button" onClick={() => { setShowUserDetails(!showUserDetails) }}>
           <BsFillPersonFill className="display-6" />
         </a>
