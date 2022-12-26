@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [showUserDetails, setShowUserDetails] = useState(false);
+  const [userDetails, setUserDetails] = useState();
   // const [navbar, setNavbar] = useState(false);
   // const [navlinkcolor, setnavlinkcolor] = useState(false);
   const navigate = useNavigate();
@@ -97,9 +98,9 @@ export default function Navbar() {
               </li>
             </ul>
             <div className={`${styles.profile}`}>
-              <Link className="btn btn-success me-2" to="/login">
+              {/* <Link className="btn btn-success me-2" to="/">
                 Login
-              </Link>
+              </Link> */}
               <a
                 type="button"
                 onClick={() => {

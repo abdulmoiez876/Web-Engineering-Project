@@ -19,7 +19,7 @@
 }
 .innerdiv {
   width: 25vw;
-  min-width: 400px;
+  min-width: 365px;
   filter: drop-shadow(5px 5px 5px #00000065);
 }
 @media(max-width: 1361px){
