@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
 import styles from "./booking.module.css";
 import Footer from "../../Footer/Footer";
 import NavBar from "../../Navbar/Navbar";
@@ -6,8 +6,17 @@ import { FaFilter } from "react-icons/fa";
 import { BsStar } from "react-icons/bs";
 import { BsFillStarFill } from "react-icons/bs";
 import Hotelcard from "../../Hotelcard/Hotelcard";
+import { countryCityData } from '../../Home/Searchbar/SearchBarData';
 
 export default function Booking() {
+  const [selectedCountry, setselectedCountry] = useState("United States")
+  const [selectedCities, setselectedCities] = useState([])
+  const [selectedCity, setselectedCity] = useState("New York")
+
+  useEffect(() => {
+    setselectedCities(countryCityData[selectedCountry])
+  }, [selectedCountry])
+
   return (
     <>
       <div className={`${styles.maincontainer}`}>
@@ -28,29 +37,34 @@ export default function Booking() {
             <h2 className="ms-4 text-success">Filter</h2>
           </div>
           <div className={`${styles.categorydiv} mt-5`}>
-            <h3 className="text-success">Category</h3>
-            <select
-              className="form-select mt-3 w-75"
-              aria-label="Default select"
-            >
-              <option selected>Select Category</option>
-              <option value="Executive">Executive</option>
-              <option value="Luxury">Luxury</option>
-              <option value="Deluxe">Deluxe</option>
-              <option value="Standard">Standard</option>
+            {/* <h3 className="text-success">Country</h3> */}
+            <label htmlFor="country" className={styles.label}>
+              Country:
+            </label>
+            <select id="country" className="form-select" value={selectedCountry} onChange={(event) => {
+              setselectedCountry(event.target.value)
+            }}>
+              {console.log(countryCityData[selectedCountry])}
+              {
+                Object.keys(countryCityData).map((element, index) => {
+
+                  return <option value={element}>{element}</option>
+                })
+              }
             </select>
           </div>
           <div className={`${styles.countrydiv} mt-5`}>
-            <h3 className="text-success">Country</h3>
-            <select
-              className="form-select mt-3 w-75"
-              aria-label="Default select"
-            >
-              <option selected>Select Category</option>
-              <option value="Executive">Executive</option>
-              <option value="Luxury">Luxury</option>
-              <option value="Deluxe">Deluxe</option>
-              <option value="Standard">Standard</option>
+            <label htmlFor="city" classNameName={styles.label}>
+              City:
+            </label>
+            <select id="city" className="form-select" value={selectedCity} onChange={(event) => {
+              setselectedCity(event.target.value)
+            }}>
+              {
+                selectedCities.map((city, index) => {
+                  return <option value={city}>{city}</option>
+                })}
+
             </select>
           </div>
           <div className={`${styles.ratingdiv} mt-5`}>
@@ -93,7 +107,7 @@ export default function Booking() {
           </div>
         </div>
         <div className={`col-9 ${styles.right}`}>
-          <Hotelcard />
+          <Hotelcard country={selectedCountry} city={selectedCity}/>
         </div>
       </div>
       <Footer />

@@ -1,6 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { countryCityData } from "../Home/Searchbar/SearchBarData";
 
 export default function (props) {
+  const [selectedCountry, setselectedCountry] = useState("United States")
+  const [selectedCities, setselectedCities] = useState([])
+  const [selectedCity, setselectedCity] = useState("New York")
+
+
+  useEffect(()=>{
+    setselectedCities(countryCityData[selectedCountry])
+  },[selectedCountry])
+
+
   return (
     <div className={`w-50 rounded-4 shadow card bg-light`}>
       <h1 className={`text-center my-5 text-success`}>{props.show ?"Application":"Suggestion"} Form</h1>
@@ -8,21 +19,34 @@ export default function (props) {
         <div className="row">
           <select
             className="form-select col mx-2"
-            aria-label="Default select example"
+            aria-label="Default select example" 
+            value={selectedCountry}
+            onChange={(event)=>{
+              setselectedCountry(event.target.value)
+            }}
           >
             <option selected>Select Country</option>
-            <option value="pakistan">Pakistan</option>
-            <option value="india">India</option>
-            <option value="america">America</option>
+            {
+              Object.keys(countryCityData).map((element, index)=>{
+                
+                return <option value={element}>{element}</option>
+              })    
+            }
+            
           </select>
           <select
             className="form-select col mx-2"
             aria-label="Default select example"
+            value={selectedCity}
+            onChange={(event)=>{
+              setselectedCity(event.target.value)
+            }}
           >
             <option selected>Select Location</option>
-            <option value="1">Sakardu</option>
-            <option value="2">Chitral</option>
-            <option value="3">Gilgit</option>
+            {
+              selectedCities.map((city, index)=>{
+                return <option value={city}>{city}</option>
+              })}
           </select>
         </div>
         <div className="row my-4">

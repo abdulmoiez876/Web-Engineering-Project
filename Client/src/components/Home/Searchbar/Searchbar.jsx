@@ -34,7 +34,6 @@ export default function Searchbar() {
                     <select id="country" className="form-select" value={selectedCountry} onChange={(event)=>{
                       setselectedCountry(event.target.value)
                     }}>
-                      {console.log(countryCityData[selectedCountry])}
                       {
                         Object.keys(countryCityData).map((element, index)=>{
                           
