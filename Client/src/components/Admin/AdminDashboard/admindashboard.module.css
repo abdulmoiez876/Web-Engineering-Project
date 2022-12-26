@@ -1,10 +1,11 @@
-.dashboard-container, .dashboard-container * {
+.dashboard-container,
+.dashboard-container * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-.dashboard-container > *:not(:first-child) {
+.dashboard-container>*:not(:first-child) {
     margin-left: 15%;
 }
 
@@ -24,29 +25,29 @@
     background-color: white;
 }
 
-.admin-info > ul {
+.admin-info>ul {
     list-style: none;
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding-left: 32px;
     padding-right: 32px;
-    
+
     height: 100%;
     align-items: center;
 }
 
-.admin-info > ul > li {
+.admin-info>ul>li {
     width: 75%;
 }
 
-.admin-info > ul > ul {
+.admin-info>ul>ul {
     list-style: none;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
 }
 
-.admin-info > ul > ul > li {
+.admin-info>ul>ul>li {
     margin-left: 5px;
     margin-right: 5px;
 }
@@ -91,7 +92,7 @@
     padding: 20px;
 }
 
-.sales-container > div > p {
+.sales-container>div>p {
     font-size: 0.8rem;
     opacity: 0.8;
 }
@@ -103,14 +104,14 @@
     padding-right: 30%;
 }
 
-.infor > p:nth-of-type(1) {
+.infor>p:nth-of-type(1) {
     font-size: 12px;
     font-weight: 500;
     color: #8094ae;
     margin-bottom: .375rem;
 }
 
-.infor > p:nth-of-type(2) {
+.infor>p:nth-of-type(2) {
     font-size: 1.7rem;
     line-height: 1.75rem;
     margin-bottom: .25rem;
@@ -204,3 +205,26 @@ small {
     opacity: 0.6;
 }
 
+.userDetails {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    background-color: white;
+    right: 0.5%;
+    top:17%;
+    border-radius: 5%;
+    padding: 2%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: flex-start;
+    z-index: 100;
+}
+
+.flex {
+    flex-wrap: nowrap;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}

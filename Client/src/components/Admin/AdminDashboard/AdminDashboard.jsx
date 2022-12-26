@@ -14,6 +14,11 @@ import {
   ArcElement,
 } from "chart.js";
 
+import adminContext from "../../../store/adminContext/adminContext";
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { BsFillPersonFill } from "react-icons/bs";
+
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -25,6 +30,10 @@ ChartJS.register(
 );
 
 export default function AdminDashboard() {
+  const adminDetails = useContext(adminContext);
+  const navigate = useNavigate();
+  const [showUserDetails, setShowUserDetails] = useState(false);
+
   const options = {
     plugins: {
       legend: {
@@ -144,14 +153,36 @@ export default function AdminDashboard() {
       <div className={`${styles["sidebar-container"]}`}>
         <AdminNavbar className={`${styles.nav}`} />
       </div>
-
+      {showUserDetails && (
+        <div className={`${styles.userDetails}`}>
+          <div className={`${styles.flex}`}>
+            <h6>Name: </h6>
+            <h6>{adminDetails.firstName} {adminDetails.lastName}</h6>
+          </div>
+          <div className={`${styles.flex}`}>
+            <h6>Email: </h6>
+            <h6>{adminDetails.email}</h6>
+          </div>
+          <div className={`${styles.flex}`}>
+            {/* <h6>Contact: </h6>
+              <h6>03430810984</h6> */}
+          </div>
+          <button style={{ padding: "10px" }} className="btn btn-danger" onClick={() => {
+            navigate('/');
+          }}>Logout</button>
+        </div>
+      )}
       <div className={`${styles["admin-info"]}`}>
         <ul>
-          <li>Do you know the latest update of 2022?</li>
+          <li>{adminDetails.firstName} {adminDetails.lastName}</li>
+          {/* <li>Do you know the latest update of 2022?</li> */}
           <ul>
-            <li>Icon</li>
-            <li>Icon 2</li>
-            <li>Logout Admin Name</li>
+            <div className={`${styles.profile}`}>
+              {/* <button className="btn btn-success me-2">Login</button> */}
+              <a type="button" onClick={() => { setShowUserDetails(!showUserDetails) }}>
+                <BsFillPersonFill className="display-6" />
+              </a>
+            </div>
           </ul>
         </ul>
       </div>
@@ -260,44 +291,44 @@ export default function AdminDashboard() {
           </div>
           <ul className={`list-group list-group-flush ${styles.list}`}>
             <li className="list-group-item">
-                <span>MA</span>
-                
-                <span>
-                    <div>Mohsin Sheikh</div>
-                    <div>sheikhmohsin181@gmail.com</div>
-                </span>
+              <span>MA</span>
+
+              <span>
+                <div>Mohsin Sheikh</div>
+                <div>sheikhmohsin181@gmail.com</div>
+              </span>
             </li>
             <li className="list-group-item">
-                <span>MA</span>
-                
-                <span>
-                    <div>Mohsin Sheikh</div>
-                    <div>sheikhmohsin181@gmail.com</div>
-                </span>
+              <span>MA</span>
+
+              <span>
+                <div>Mohsin Sheikh</div>
+                <div>sheikhmohsin181@gmail.com</div>
+              </span>
             </li>
             <li className="list-group-item">
-                <span>MA</span>
-                
-                <span>
-                    <div>Mohsin Sheikh</div>
-                    <div>sheikhmohsin181@gmail.com</div>
-                </span>
+              <span>MA</span>
+
+              <span>
+                <div>Mohsin Sheikh</div>
+                <div>sheikhmohsin181@gmail.com</div>
+              </span>
             </li>
             <li className="list-group-item">
-                <span>MA</span>
-                
-                <span>
-                    <div>Mohsin Sheikh</div>
-                    <div>sheikhmohsin181@gmail.com</div>
-                </span>
+              <span>MA</span>
+
+              <span>
+                <div>Mohsin Sheikh</div>
+                <div>sheikhmohsin181@gmail.com</div>
+              </span>
             </li>
             <li className="list-group-item">
-                <span>MA</span>
-                
-                <span>
-                    <div>Mohsin Sheikh</div>
-                    <div>sheikhmohsin181@gmail.com</div>
-                </span>
+              <span>MA</span>
+
+              <span>
+                <div>Mohsin Sheikh</div>
+                <div>sheikhmohsin181@gmail.com</div>
+              </span>
             </li>
           </ul>
         </div>

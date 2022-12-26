@@ -5,21 +5,28 @@ import logo from "../../assets/logo.png";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import userContext from "../../store/userContext/userContext";
+import adminContext from "../../store/adminContext/adminContext";
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [authenticated, setAuthenticated] = useState(false);
+  const [userAuthenticated, setUserAuthenticated] = useState(false);
+  const [adminAuthenticated, setAdminAuthenticated] = useState(false);
   const [authenticationMessage, setAuthenticationMessage] = useState('');
+
   const userDetails = useContext(userContext);
+  const adminDetails = useContext(adminContext);
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (authenticated) {
+    if (userAuthenticated) {
       navigate(`/home`);
     }
-  }, [authenticated])
+    else if(adminAuthenticated) {
+      navigate('/admin-dash');
+    }
+  }, [userAuthenticated, adminAuthenticated])
 
   const changeHandler = (event) => {
     if (event.target.name === 'email') {
@@ -43,19 +50,37 @@ export default function Login() {
           userDetails.firstName = response.data.result.firstName;
           userDetails.lastName = response.data.result.lastName;
           userDetails.email = response.data.result.email;
-          setAuthenticated(true);
+          setUserAuthenticated(true);
         }
         else {
-          setAuthenticated(false);
+          setUserAuthenticated(false);
         }
       })
         .catch((error) => {
-          setAuthenticated(false);
+          setUserAuthenticated(false);
           setAuthenticationMessage("Some Error Occurred, Please try again!");
         })
     }
     else if (event.target.name === 'adminLogin') {
-
+      axios.post('http://localhost:8000/authenticateAdmin', {
+        email: email,
+        password: password
+      }).then((response) => {
+        setAuthenticationMessage(response.data.message);
+        if (response.data.status) {
+          adminDetails.firstName = response.data.result.firstName;
+          adminDetails.lastName = response.data.result.lastName;
+          adminDetails.email = response.data.result.email;
+          setAdminAuthenticated(true);
+        }
+        else {
+          setAdminAuthenticated(false);
+        }
+      })
+        .catch((error) => {
+          setAdminAuthenticated(false);
+          setAuthenticationMessage("Some Error Occurred, Please try again!");
+        })
     }
   }
 

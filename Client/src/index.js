@@ -8,9 +8,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <userContext>
-        <App />
-      </userContext>
+      <adminContext>
+        <userContext>
+          <App />
+        </userContext>
+      </adminContext>
     </BrowserRouter>
   </React.StrictMode>
 );
