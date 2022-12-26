@@ -10,12 +10,13 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const [authenticated, setAuthenticated] = useState(false);
   const [authenticationMessage, setAuthenticationMessage] = useState('');
+  const [id, setId] = useState();
 
   const navigate = useNavigate();
 
   useEffect(() => {
     if (authenticated) {
-      navigate('/home');
+      navigate(`/home?id=${id}`);
     }
   }, [authenticated])
 
@@ -36,6 +37,7 @@ export default function Login() {
     }).then((response) => {
       setAuthenticationMessage(response.data.message);
       if (response.data.status) {
+        setId(response.data.result.id);
         setAuthenticated(true);
       }
       else {
@@ -49,7 +51,7 @@ export default function Login() {
   }
 
   const toSignUp = () => {
-    navigate('/signup');
+    navigate(`/signup`);
   }
 
   return (

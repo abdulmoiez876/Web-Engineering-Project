@@ -4,46 +4,41 @@ import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import { BsFillPersonFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-export default function Navbar() {
+export default function Navbar(props) {
   const [showUserDetails, setShowUserDetails] = useState(false);
-  const [userDetails, setUserDetails] = useState();
+  const [userDetails, setUserDetails] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+  });
   // const [navbar, setNavbar] = useState(false);
   // const [navlinkcolor, setnavlinkcolor] = useState(false);
   const navigate = useNavigate();
+  
+  useEffect(() => {
+    const id = props.userId;
+    axios.get(`http://localhost:8000/getUserById/${id}`).then((response) => {
+      if(response.data.status) {
+        setUserDetails({
+          firstName: response.data.result.firstName,
+          lastName: response.data.result.lastName,
+          email: response.data.result.email
+        });
+        console.log(response.data.result.email);
+      }
+    })
+  }, [])
 
-  // const changeBackground = () => {
-  //   console.log(window.scrollY);
-  //   if (window.scrollY >= window.innerHeight-100) {
-  //     setNavbar(true);
-  //   } else {
-  //     setNavbar(false);
-  //   }
-  // };
-  // const changeColor = () => {
-  //   console.log(window.scrollY);
-  //   if (window.scrollY >= window.innerHeight-100) {
-  //     setnavlinkcolor(true);
-  //   } else {
-  //     setnavlinkcolor(false);
-  //   }
-  // };
-  // useEffect(() => {
-  //   changeBackground();
-  //   // adding the event when scroll change background
-  //   window.addEventListener("scroll", changeBackground);
-  // });
-  // useEffect(() => {
-  //   changeColor();
-  //   // adding the event when scroll change background
-  //   window.addEventListener("scroll", changeColor);
-  // });
   return (
     <div className={`d-flex bg-light align-items-center`}>
       <nav className={`navbar navbar-expand-lg bg-light ${styles.navbar}`}>
         <div className="container-fluid">
           <a className={`navbar-brand ${styles.logodiv}`} href="#">
-            <img className={styles.logowidth} src={logo} alt="Tripify Logo" />
+            <img className={styles.logowidth} src={logo} alt="Tripify Logo" onClick={() => {
+              navigate('/home')
+            }} />
           </a>
           <button
             className="navbar-toggler"
@@ -116,11 +111,11 @@ export default function Navbar() {
           <div className={`${styles.userDetails}`}>
             <div className={`${styles.flex}`}>
               <h6>Name: </h6>
-              <h6>Abdul Moiez</h6>
+              <h6>{userDetails.firstName} {userDetails.lastName}</h6>
             </div>
             <div className={`${styles.flex}`}>
               <h6>Email: </h6>
-              <h6>abdul.moiez@gmail.com</h6>
+              <h6>{userDetails.email}</h6>
             </div>
             <div className={`${styles.flex}`}>
               <h6>Contact: </h6>
