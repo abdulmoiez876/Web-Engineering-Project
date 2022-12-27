@@ -76,7 +76,6 @@ export default function PopularDestinations() {
           <Carousel.Item>
         <CardGroup className={styles.cards}>
           
-          
       {limitedcardInfo.map(renderCards)}
     
     </CardGroup>

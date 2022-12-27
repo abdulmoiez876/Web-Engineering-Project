@@ -66,14 +66,7 @@
   width: 40%;
   margin: auto;
 }
-.c3card {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.subscribe{
-  width: 65%;
-}
+
 .container4{
   padding:5%;
 }

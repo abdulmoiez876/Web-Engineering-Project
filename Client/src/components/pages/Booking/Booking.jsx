@@ -44,7 +44,7 @@ export default function Booking() {
             <select id="country" className="form-select" value={selectedCountry} onChange={(event) => {
               setselectedCountry(event.target.value)
             }}>
-              {console.log(countryCityData[selectedCountry])}
+              {/* {console.log(countryCityData[selectedCountry])} */}
               {
                 Object.keys(countryCityData).map((element, index) => {
 
@@ -107,7 +107,7 @@ export default function Booking() {
           </div>
         </div>
         <div className={`col-9 ${styles.right}`}>
-          <Hotelcard />
+          <Hotelcard country={selectedCountry} city={selectedCity}/>
         </div>
       </div>
       <Footer />

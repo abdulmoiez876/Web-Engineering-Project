@@ -2,7 +2,8 @@ import {
     addNewUser,
     authenticateUser,
     getAllUsers,
-    deleteUser
+    deleteUser,
+    getUserById
 } from "../../models/users/users.model.js";
 
 const httpAddNewUser = async (req, res) => {
@@ -59,9 +60,20 @@ const httpDeleteUser = async (req, res) => {
     }
 }
 
+const httpGetUserById = async (req, res) => {
+    try {
+        const response = await getUserById(req.params.id);
+        res.status(200).send(response);
+    }
+    catch(err) {
+        res.status(404).send(err);
+    }
+}
+
 export {
     httpAddNewUser,
     httpAuthenticateUser,
     httpGetAllUsers,
-    httpDeleteUser
+    httpDeleteUser,
+    httpGetUserById
 }

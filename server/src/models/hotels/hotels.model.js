@@ -82,8 +82,87 @@ const getAllHotels = async () => {
     }
 }
 
+const getHotelById = async (id) => {
+    try {
+        const result = await hotels.findOne({id});
+
+        if(result) {
+            return {
+                result,
+                status: true
+            }
+        }
+        else {
+            return {
+                status: false
+            }
+        }
+    }
+    catch(err) {
+        return {
+            status: false
+        }
+    }
+}
+
+const deleteHotelById = async (id) => {
+    try {
+        const result = await hotels.deleteOne({id});
+
+        if(result.deletedCount === 1) {
+            return {
+                message: "Hotel Deleted Successfully!",
+                status: true
+            }
+        }
+        else {
+            return {
+                message: "Hotel Not Found!",
+                status: true
+            }
+        }
+    }
+    catch(err) {
+        return {
+            status: false
+        }
+    }
+}
+
+const editHotelById = async (id, hotelData) => {
+    try {
+        const hotel = await hotels.findOne({id});
+
+        if(hotel) {
+            await hotels.updateOne({id}, {
+                id,
+                ...hotelData
+            })
+            return {
+                status: true,
+                message: "Hotel updated successfully!"
+            }
+        }
+        else {
+            return {
+                status: false,
+                message: "Hotel Not Found!"
+            }
+        }
+    }
+    catch(err) {
+        return {
+            status: false,
+            message: "Hotel not updated, Please try again later!"
+        }
+    }
+}
+
 export {
     addNewHotel,
     upload,
-    getAllHotels
+    getAllHotels,
+    getHotelById,
+    deleteHotelById,
+    editHotelById
 }

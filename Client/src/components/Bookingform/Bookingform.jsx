@@ -1,9 +1,84 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import NavBar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import styles from "./bookingform.module.css";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
 export default function Bookingform() {
+  const [customerName, setCustomerName] = useState('');
+  const [customerEmail, setCustomerEmail] = useState('');
+  const [customerContactNumber, setCustomerContactNumber] = useState('');
+  const [hotelName, setHotelName] = useState('');
+  const [country, setCountry] = useState('');
+  const [city, setCity] = useState('');
+  const [arrivalTime, setArrivalTime] = useState('');
+  const [roomType, setRoomType] = useState('');
+  const [roomNumber, setRoomNumber] = useState();
+  const [numberOfRooms, setNumberOfRooms] = useState();
+  const [numberOfAvailableRooms, setNumberOfAvailableRooms] = useState();
+  const [image, setImage] = useState('');
+
+  const {id} = useParams();
+
+  useEffect(() => {
+    axios.get(`http://localhost:8000/getHotelById/${id}`).then((response) => {
+      if(response.data.status) {
+        setHotelName(response.data.result.name);
+        setCity(response.data.result.city);
+        setCountry(response.data.result.country);
+        setNumberOfAvailableRooms(response.data.result.numberOfAvailableRooms);
+        setNumberOfRooms(response.data.result.numberOfRooms);
+        setImage(response.data.result.image);
+      }
+    })
+  }, [])
+
+  const changeHandler = (event) => {
+    if(event.target.name === 'customerName') {
+      setCustomerName(event.target.value);
+    }
+    else if(event.target.name === 'customerEmail') {
+      setCustomerEmail(event.target.value);
+    }
+    else if(event.target.name === 'customerContactNumber') {
+      setCustomerContactNumber(event.target.value);
+    }
+    else if(event.target.name === 'roomType') {
+      setRoomType(event.target.value);
+    }
+    else if(event.target.name === 'arrivalDate') {
+      console.log(event.target.value);
+      setArrivalTime(event.target.value);
+    }
+    else if(event.target.name === 'roomNumber') {
+      setRoomNumber(event.target.value);
+    }
+  }
+
+  const submitHandler = async () => {
+    axios.post('http://localhost:8000/addNewBooking', {
+      customerName,
+      customerEmail,
+      customerContactNumber,
+      hotelName,
+      country,
+      city,
+      arrivalTime,
+      roomType,
+      roomNumber
+    }).then((response) => {
+      axios.get(`http://localhost:8000/getHotelById/${id}`).then((response) => {
+      if(response.data.status) {
+        setNumberOfRooms(response.data.result.numberOfRooms);
+      }
+    })
+      alert(response.data.message);
+    }).catch((err) => {
+      alert(err);
+    })
+  }
+
   return (
     <>
       <NavBar />
@@ -20,25 +95,44 @@ export default function Bookingform() {
             <p className="p-0 m-0">
               <b>Name:</b>
             </p>
-            <p className="p-0 ms-2 my-0">Razi Hostel</p>
+            <p className="p-0 ms-2 my-0">{hotelName}</p>
           </div>
           <div className="d-flex align-items-center text-secondary">
             <p className="p-0 m-0">
-              <b>Location:</b>
+              <b>Country:</b>
             </p>
-            <p className="p-0 ms-2 my-0">Bolan Road</p>
+            <p className="p-0 ms-2 my-0">{country}</p>
           </div>
-          <h2 className="mt-2 text-success">Images</h2>
+          <div className="d-flex align-items-center text-secondary">
+            <p className="p-0 m-0">
+              <b>City:</b>
+            </p>
+            <p className="p-0 ms-2 my-0">{city}</p>
+          </div>
+          <div className="d-flex align-items-center text-secondary">
+            <p className="p-0 m-0">
+              <b>Number of Rooms:</b>
+            </p>
+            <p className="p-0 ms-2 my-0">{numberOfRooms}</p>
+          </div>
+          <div className="d-flex align-items-center text-secondary">
+            <p className="p-0 m-0">
+              <b>Number of Available Rooms:</b>
+            </p>
+            <p className="p-0 ms-2 my-0">{numberOfAvailableRooms}</p>
+          </div>
+          {/* <h2 className="mt-2 text-success">Images</h2> */}
           <div className="row rounded-4">
             <img
-              src={require("../../assets/chitral1.jpg")}
+              // src={require("../../assets/chitral1.jpg")}
+              src={image}
               alt=""
               className="rounded-4 p-1"
             />
           </div>
 
           <div className={`row d-flex ${styles.imgrow}`}>
-            <img
+            {/* <img
               src={require("../../assets/chitral1.jpg")}
               alt=""
               className="col-5 rounded-4 p-1"
@@ -59,7 +153,7 @@ export default function Bookingform() {
               src={require("../../assets/chitral1.jpg")}
               alt=""
               className="col-5 rounded-4 p-1"
-            />
+            /> */}
           </div>
         </div>
         <div className={`col-5 mt-5 p-4 ${styles.bookform}`}>
@@ -67,17 +161,19 @@ export default function Bookingform() {
           <form>
             <div className="row px-4">
               <div className="col">
-                <input
+                <input onChange={changeHandler}
                   type="text"
                   className="form-control"
                   name="customerName"
+                  value={customerName}
                   placeholder="Enter Your Name"
                 />
               </div>
               <div className="col">
-                <input
+                <input onChange={changeHandler}
                   type="email"
                   name="customerEmail"
+                  value={customerEmail}
                   className="form-control"
                   placeholder="Enter Your Email"
                 />
@@ -85,18 +181,19 @@ export default function Bookingform() {
             </div>
             <div className="row mt-4 px-4">
               <div className="col">
-                <input
+                <input onChange={changeHandler}
                   type="text"
                   name="customerContactNumber"
+                  value={customerContactNumber}
                   className="form-control"
                   placeholder="Enter Your Contact"
                 />
               </div>
               <div className="col">
-                <select class="form-select" aria-label="Default select example">
-                  <option selected>Select Category</option>
-                  <option name="room category" value="Single Room">
-                    Double Room
+                <select value={roomType} onChange={changeHandler} class="form-select" aria-label="Default select example" name="roomType">
+                  <option selected>Select Room Type</option>
+                  <option value="Single Room">
+                    Single Room
                   </option>
                   <option name="room category" value="Double Room">
                     Double Room
@@ -109,7 +206,7 @@ export default function Bookingform() {
                 <label htmlFor="arrivalDate" className="text-dark">
                   <b>Arrival Date</b>{" "}
                 </label>
-                <input
+                <input onChange={changeHandler}
                   type="date"
                   id="arrivalDate"
                   name="arrivalDate"
@@ -118,13 +215,17 @@ export default function Bookingform() {
               </div>
               <div className="col">
                 <label htmlFor="leavingDate" className="text-dark">
-                  <b>Leaving Date</b>
+                  <b>Room Number</b>
                 </label>
                 <input
-                  type="date"
+                  value={roomNumber}
+                  onChange={changeHandler}
+                  type="number"
                   id="leavingDate"
-                  name="leavingDate"
+                  name="roomNumber"
                   className="form-control"
+                  min='1'
+                  max={numberOfRooms}
                 />
               </div>
             </div>
@@ -162,7 +263,7 @@ export default function Bookingform() {
             <p className={`text-success`}><b>Charges: </b></p> <p>&nbsp;Rs. 500</p>
           </div>
           <div className={`align-items-center justify-content-center d-flex ${styles.submitButton}`}>
-            <button className="btn btn-success w-50">Book Now</button>
+            <button onClick={submitHandler} className="btn btn-success w-50">Book Now</button>
           </div>
         </div>
       </div>

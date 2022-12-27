@@ -17,7 +17,7 @@ export default function AdminCustomersInfo() {
     })
   }, [])
 
-  //Table dynamic data
+  // Table dynamic data
   // const user = {
   //     name: 'Mohsin Sheikh',
   //     email: 'sheikhmohsin181@gmail.com',

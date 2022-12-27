@@ -1,4 +1,5 @@
 import bookings from './bookings.mongo.js';
+import hotels from '../hotels/hotels.mongo.js';
 
 const getLatestId = async () => {
     const latestBooking = await bookings.findOne().sort('-id');
@@ -37,10 +38,26 @@ const addNewBooking = async (bookingData) => {
         } 
         else {
             try {
-                await bookings.create({
+                const result = await bookings.create({
                     id,
+                    bookingStatus: false,
                     ...bookingData
+                });
+
+                const hotelToUpdate = await hotels.findOne({
+                    name: result.hotelName,
+                    country: result.country,
+                    city: result.city
+                });
+                
+                const resultHotelUpdate = await hotels.updateOne({
+                    name: result.hotelName,
+                    country: result.country,
+                    city: result.city
+                }, {
+                    numberOfRooms: +hotelToUpdate.numberOfRooms - 1
                 })
+
 
                 return {
                     status: true,

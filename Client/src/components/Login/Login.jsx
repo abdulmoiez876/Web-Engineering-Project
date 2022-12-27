@@ -1,23 +1,32 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styles from "./login.module.css";
 import loginPic from "../../assets/loginpage.jpg";
 import logo from "../../assets/logo.png";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import userContext from "../../store/userContext/userContext";
+import adminContext from "../../store/adminContext/adminContext";
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [authenticated, setAuthenticated] = useState(false);
+  const [userAuthenticated, setUserAuthenticated] = useState(false);
+  const [adminAuthenticated, setAdminAuthenticated] = useState(false);
   const [authenticationMessage, setAuthenticationMessage] = useState('');
+
+  const userDetails = useContext(userContext);
+  const adminDetails = useContext(adminContext);
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (authenticated) {
-      navigate('/home');
+    if (userAuthenticated) {
+      navigate(`/home`);
     }
-  }, [authenticated])
+    else if(adminAuthenticated) {
+      navigate('/admin-dash');
+    }
+  }, [userAuthenticated, adminAuthenticated])
 
   const changeHandler = (event) => {
     if (event.target.name === 'email') {
@@ -30,33 +39,60 @@ export default function Login() {
 
   const loginHandler = (event) => {
     event.preventDefault();
-    axios.post('http://localhost:8000/authenticateUser', {
-      email: email,
-      password: password
-    }).then((response) => {
-      setAuthenticationMessage(response.data.message);
-      if (response.data.status) {
-        setAuthenticated(true);
-      }
-      else {
-        setAuthenticated(false);
-      }
-    })
-    .catch((error) => {
-      setAuthenticated(false);
-      setAuthenticationMessage("Some Error Occurred, Please try again!");
-    })
+
+    if (event.target.name === 'userLogin') {
+      axios.post('http://localhost:8000/authenticateUser', {
+        email: email,
+        password: password
+      }).then((response) => {
+        setAuthenticationMessage(response.data.message);
+        if (response.data.status) {
+          userDetails.firstName = response.data.result.firstName;
+          userDetails.lastName = response.data.result.lastName;
+          userDetails.email = response.data.result.email;
+          setUserAuthenticated(true);
+        }
+        else {
+          setUserAuthenticated(false);
+        }
+      })
+        .catch((error) => {
+          setUserAuthenticated(false);
+          setAuthenticationMessage("Some Error Occurred, Please try again!");
+        })
+    }
+    else if (event.target.name === 'adminLogin') {
+      axios.post('http://localhost:8000/authenticateAdmin', {
+        email: email,
+        password: password
+      }).then((response) => {
+        setAuthenticationMessage(response.data.message);
+        if (response.data.status) {
+          adminDetails.firstName = response.data.result.firstName;
+          adminDetails.lastName = response.data.result.lastName;
+          adminDetails.email = response.data.result.email;
+          setAdminAuthenticated(true);
+        }
+        else {
+          setAdminAuthenticated(false);
+        }
+      })
+        .catch((error) => {
+          setAdminAuthenticated(false);
+          setAuthenticationMessage("Some Error Occurred, Please try again!");
+        })
+    }
   }
 
   const toSignUp = () => {
-    navigate('/signup');
+    navigate(`/signup`);
   }
 
   return (
     <>
       <section
         className={`card px-4 py-4 px-md-5 text-center text-lg-start ${styles.loginform}`}
-        >
+      >
         {authenticationMessage.length > 0 &&
           <div class="alert alert-warning" role="alert">
             {authenticationMessage}
@@ -91,10 +127,18 @@ export default function Login() {
             />
           </div>
           <button
+            name="userLogin"
             class={`btn btn-outline-success btn-block ${styles.btn}`}
             onClick={loginHandler}
           >
-            Login
+            User Login
+          </button>
+          <button
+            name="adminLogin"
+            class={`btn btn-outline-success btn-block ${styles.btn}`}
+            onClick={loginHandler}
+          >
+            Admin Login
           </button>
 
           <p className="small text-center mt-3">
@@ -135,7 +179,7 @@ export default function Login() {
           </div>
           <div class="text-center mt-2 d-flex justify-content-center">
             <p className="text-secondary m-0">Not Registered?</p>
-            <a className={`mx-1 ${styles.signuplink}`} onClick = {toSignUp}>
+            <a className={`mx-1 ${styles.signuplink}`} onClick={toSignUp}>
               Sign up
             </a>
           </div>

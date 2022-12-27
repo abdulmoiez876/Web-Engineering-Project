@@ -6,8 +6,8 @@ export default function Footer() {
   return (
     <div className="fluid px-5 bg-dark">
       <footer className="pt-5 text-light">
-        <div className="row">
-          <div className="col-2">
+        <div className={`row ${styles.row}`}>
+          <div className={`col-2  ${styles.columns}`}>
             <h5 className="text-success">TOP DESTINATIONS</h5>
             <ul className="nav flex-column">
               <li className="nav-item mb-2">
@@ -77,7 +77,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="col-2">
+          <div className={`col-2 ${styles.columns}`}>
             <h5 className="text-success">TRAVEL INTERESTS</h5>
             <ul className="nav flex-column">
               <li className="nav-item mb-2">
@@ -123,7 +123,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="col-2">
+          <div className={`col-2 ${styles.columns}`}>
             <h5 className="text-success">SHOP</h5>
             <ul className="nav flex-column">
               <li className="nav-item mb-2">
@@ -160,7 +160,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div className="col-2">
+          <div className={`col-2 ${styles.columns}`}>
             <h5 className="text-success">ABOUT US</h5>
             <ul className="nav flex-column">
               <li className="nav-item mb-2">
@@ -214,7 +214,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="col-4">
+          <div className={`col-4 ${styles.subscribe}`}>
             <form>
               <h5>Subscribe to our newsletter</h5>
               <p>Monthly digest of whats new and exciting from us.</p>

@@ -7,6 +7,7 @@ import { usersRouter } from './routes/users/users.router.js';
 import { contactUsRouter } from './routes/contactUs/contactUs.router.js';
 import { hotelsRouter } from './routes/hotels/hotels.router.js';
 import { bookingsRouter } from './routes/bookings/bookings.router.js';
+import { adminsRouter } from './routes/admin/admins.router.js';
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.use(usersRouter);
 app.use(contactUsRouter);
 app.use(hotelsRouter);
 app.use(bookingsRouter);
+app.use(adminsRouter);
 
 export {
     app

@@ -1,46 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import styles from "./navbar.module.css";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import { BsFillPersonFill } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
+import userContext from "../../store/userContext/userContext";
 
 export default function Navbar() {
   const [showUserDetails, setShowUserDetails] = useState(false);
-  // const [navbar, setNavbar] = useState(false);
-  // const [navlinkcolor, setnavlinkcolor] = useState(false);
+  const navigate = useNavigate();
+  const userDetails = useContext(userContext);
 
-  // const changeBackground = () => {
-  //   console.log(window.scrollY);
-  //   if (window.scrollY >= window.innerHeight-100) {
-  //     setNavbar(true);
-  //   } else {
-  //     setNavbar(false);
-  //   }
-  // };
-  // const changeColor = () => {
-  //   console.log(window.scrollY);
-  //   if (window.scrollY >= window.innerHeight-100) {
-  //     setnavlinkcolor(true);
-  //   } else {
-  //     setnavlinkcolor(false);
-  //   }
-  // };
-  // useEffect(() => {
-  //   changeBackground();
-  //   // adding the event when scroll change background
-  //   window.addEventListener("scroll", changeBackground);
-  // });
-  // useEffect(() => {
-  //   changeColor();
-  //   // adding the event when scroll change background
-  //   window.addEventListener("scroll", changeColor);
-  // });
   return (
     <div className={`d-flex bg-light align-items-center`}>
       <nav className={`navbar navbar-expand-lg bg-light ${styles.navbar}`}>
         <div className="container-fluid">
           <a className={`navbar-brand ${styles.logodiv}`} href="#">
-            <img className={styles.logowidth} src={logo} alt="Tripify Logo" />
+            <img className={styles.logowidth} src={logo} alt="Tripify Logo" onClick={() => {
+              navigate('/home')
+            }} />
           </a>
           <button
             className="navbar-toggler"
@@ -89,34 +67,48 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className="nav-item">
-                <a className={`nav-link text-dark ${styles.navbartext} mx-4`}>
+                <Link to="/aboutus" className={`nav-link text-dark ${styles.navbartext} mx-4`}>
                   About Us
-                </a>
+                </Link>
               </li>
             </ul>
+            <div className={`${styles.profile}`}>
+              {/* <Link className="btn btn-success me-2" to="/">
+                Login
+              </Link> */}
+              <a
+                type="button"
+                onClick={() => {
+                  setShowUserDetails(!showUserDetails);
+                }}
+              >
+                <BsFillPersonFill className="display-6" />
+              </a>
+            </div>
           </div>
         </div>
-        {
-          showUserDetails &&
+        {showUserDetails && (
           <div className={`${styles.userDetails}`}>
             <div className={`${styles.flex}`}>
               <h6>Name: </h6>
-              <h6>Abdul Moiez</h6>
+              <h6>{userDetails.firstName} {userDetails.lastName}</h6>
             </div>
             <div className={`${styles.flex}`}>
               <h6>Email: </h6>
-              <h6>abdul.moiez@gmail.com</h6>
+              <h6>{userDetails.email}</h6>
             </div>
             <div className={`${styles.flex}`}>
-              <h6>Contact: </h6>
-              <h6>03430810984</h6>
+              {/* <h6>Contact: </h6>
+              <h6>03430810984</h6> */}
             </div>
-            <button className="btn btn-danger">Logout</button>
+            <button className="btn btn-danger" onClick={() => {
+              navigate('/');
+            }}>Logout</button>
           </div>
-        }
+        )}
       </nav>
       <div className={`${styles.profile}`}>
-        <button className="btn btn-success me-2">Login</button>
+        {/* <button className="btn btn-success me-2">Login</button> */}
         <a type="button" onClick={() => { setShowUserDetails(!showUserDetails) }}>
           <BsFillPersonFill className="display-6" />
         </a>

@@ -49,8 +49,10 @@ const addNewUser = async (userData) => {
 const authenticateUser = async (userData) => {
     try {
         if(await users.findOne({email: userData.email})) {
-            if(await users.findOne({email: userData.email, password: userData.password})) {
+            const result = await users.findOne({email: userData.email, password: userData.password}); 
+            if(result) {
                 return {
+                    result,
                     status: true,
                     message: "User verified successfully!"
                 }
@@ -108,10 +110,34 @@ const deleteUser = async (id) => {
     }
 }
 
+const getUserById = async (id) => {
+    try {
+        const result = await users.findOne({id});
+
+        if(result) {
+            return {
+                result,
+                status: true
+            }
+        }
+        else {
+            return {
+                status: false
+            }
+        }
+    }
+    catch(err) {
+        return {
+            status: false,
+        }
+    }
+}
+
 export {
     addNewUser,
     authenticateUser,
     getAllUsers,
-    deleteUser
+    deleteUser,
+    getUserById
 }
 
