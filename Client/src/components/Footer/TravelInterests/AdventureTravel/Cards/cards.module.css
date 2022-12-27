@@ -3,15 +3,9 @@
     box-sizing: border-box;
 }
 .container{
-    /* position:sticky;
-    top: 0;
-    left: 0; */
-
     padding: 50px;
     display: flex;
     width: 100%;
-    
-    /* border: 1px solid black; */
     align-items: flex-start;
     flex-direction: column;
 }
@@ -19,18 +13,14 @@
     width: 70%;
     height: 150px;
     display: flex;
-    /* border: 1px solid black; */
     margin-bottom: 25px;
     overflow: hidden;
-    /* justify-content: center; */
     align-items: center;
 }
-.infoContainer{
-    /* border: 1px solid black; */
-}
+
 .image{
-    width: 140px;
-    height: 140px;
+    /* width: 140px;
+    height: 140px; */
     object-fit: cover;
     border-radius: 10%;
     margin-right: 20px;
@@ -66,4 +56,41 @@
     font-weight:600;
     margin-bottom: 0;
   
+}
+@media only screen and (max-width: 640px) {
+    .container{
+        padding: 10px;
+    }
+    .cardContainer{
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .caption{
+        /* font-size: small; */
+        font-weight: bold;
+        font-size: small;
+        margin-bottom: 2px;
+        color: rgb(45, 45, 247);
+        margin-bottom: 5px;
+    }
+    .timendate{
+
+        font-size:small;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .description{
+        font-size:x-small;
+        font-weight:600;
+        margin-bottom: 0;
+    }
+    .type{
+        color: rgb(84, 82, 82);
+        font-size: x-small;
+        font-weight: bold;
+        text-decoration: underline;
+        margin-bottom: 0;
+    }
+
 }

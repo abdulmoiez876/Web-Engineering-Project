@@ -27,7 +27,7 @@ export default function TopUrduGuides(props) {
                 <div className={styles.continentFlex}>
                     {props.continentsImages.map((element,index)=>{
                          {console.log(element["name"])}
-                        return <div className={styles.continentImageContainer} onClick={()=>{navigate(`/books/${element["name"]}`)}}>
+                        return <div className={styles.continentImageContainer} onClick={()=>{navigate(`/urdubooks/${element["name"]}`)}}>
                         <img className={styles.continentImage} src={props.continentsImages[index]["image"]}></img>
                         <h5 className={styles.continentName}>{props.continentsImages[index]["name"]}</h5>
                         

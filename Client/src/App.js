@@ -28,6 +28,9 @@ import Contactusform from "./components/Contactus/Contactusform/Contactusform";
 import Destination from "./components/pages/Destination/Destination";
 import Bookingform from "./components/Bookingform/Bookingform";
 import Hotelcard from "./components/Hotelcard/Hotelcard";
+import UrduBooks from "./components/Footer/Shop/UrduGuides/UrduBooks/UrduBooks"
+import Book from "./components/Footer/Shop/GuideBooks/Books/Book/Book"
+import UrduBook from "./components/Footer/Shop/UrduGuides/UrduBooks/UrduBook/UrduBook"
 
 function App() {
   
@@ -40,6 +43,7 @@ function App() {
         <Route path="/guidebooks" element={<GuideBooks/>}/>
         <Route path="/englishbooks/:name" element={<EnglishBooks/>}/>
         <Route path="/books/:name" element={<Books/>}/>
+        <Route path="/urdubooks/:name" element={<UrduBooks/>}/>
         <Route path="/adventuretravel" element={<AdventureTravel/>}/>
         <Route path="/discover" element={<Discover/>}/>
         <Route path="/englishguides" element={<EnglishGuides/>}/>
@@ -61,6 +65,9 @@ function App() {
         <Route path="/privacy" element={<Privacy/>} />
         <Route path="/booking" element={<Booking/>} />
         <Route path="/englishbook/:name/:image/:description/:price" element={<EnglishBook/>}/>
+        <Route path="/book/:name/:image/:description/:price" element={<Book/>}/>
+        <Route path="/urdubook/:name/:image/:description/:price" element={<UrduBook/>}/>
+
         <Route path="/bookingform" element={<Bookingform/>} />
         <Route path="/contactUsForm" element={<Contactusform/>} />
       </Routes>

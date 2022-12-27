@@ -60,6 +60,7 @@
 }
 .continentImageContainer{
     width: 18%;
+    min-width: 160px;
     height: 25%;
     /* border: 1px solid black; */
     margin-right: 20px;
@@ -90,4 +91,20 @@
 .continentImageContainer:hover .continentImage{
     filter: brightness(50%);
     transform:  rotate(-2deg) scale(1.2);
+}
+@media only screen and (max-width:640px){
+    .container{
+        padding: 2% 2%;
+    }
+    .topFlex{
+        flex-direction: column;
+        height: 60vh;
+    }
+    .topImageContainer{
+        flex: 0;
+        
+    }
+    .topImage{
+        display: none;
+    }
 }

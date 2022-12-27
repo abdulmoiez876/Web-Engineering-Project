@@ -24,8 +24,15 @@
     top: 0;
     left: 0;
 }
-.carousel{
-    /* position:sticky;
-    top: 0;
-    left: 0; */
+
+
+@media only screen and (max-width: 640px) {
+    .description{
+    line-height: normal;
+       word-spacing: normal;
+       font-size: small;
+    }
+    .heading{
+     font-size: medium;
+    }
 }

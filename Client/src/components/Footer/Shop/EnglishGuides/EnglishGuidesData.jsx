@@ -58,7 +58,7 @@ export const continentsImages = [
 
   export  const captionHeading2 = "Best of East Cost Australia!"
   export  const heading2 = ""
-  export  const captionDescription2 = "Snorkel the Whitsundays, tour the Opera House or bushwalk at Wilsons Prom; all with your trusted travel companion. Discover the best of East Coast Australia and begin your journey now!"
+  export  const captionDescription2 = "Snorkel the Whitsundays, all with your trusted travel companion. Discover the best of East Coast Australia!"
   export const topImage2 = require("../../../../assets/eastCostAustralia.png")
   export const continentHeading ="Browse all Guides By Continent"
   export const seriesHeading = "Browse by series"
