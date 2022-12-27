@@ -13,46 +13,50 @@ export default function Footer() {
             </h5>
             <ul className="nav flex-column">
               <li className="nav-item mb-2">
-                <a
-                  href="#"
+                <Link
+                to='/destination/Feary Meadows/Pakistan'
                   className={`nav-link p-0 text-secondary ${styles.footerlink}`}
                 >
                   Feary Meadows
-                </a>
+                </Link>
               </li>
               <li className="nav-item mb-2">
-                <a
+                <Link
+                to='/destination/Azad Jamu & Kashmir/Pakistan'
                   href="#"
                   className={`nav-link p-0 text-secondary ${styles.footerlink}`}
                 >
                   Azad Jamu & Kashmir
-                </a>
+                </Link>
               </li>
               <li className="nav-item mb-2">
-                <a
-                  href="#"
+                <Link
+                to='/destination/Naran Kaghan/Pakistan'
+                  // href="#"
                   className={`nav-link p-0 text-secondary ${styles.footerlink}`}
                 >
                   Naran Kaghan
-                </a>
+                </Link>
               </li>
               <li className="nav-item mb-2">
-                <a
-                  href="#"
+                <Link
+                  // href="#"
+                  to='/destination/Swat Valley/Pakistan'
                   className={`nav-link p-0 text-secondary ${styles.footerlink}`}
                 >
                   Swat Valley
-                </a>
+                </Link>
               </li>
               <li className="nav-item mb-2">
-                <a
+                <Link
+                to='/destination/Hunza Valley/Pakistan'
                   href="#"
                   className={`nav-link p-0 text-secondary ${styles.footerlink}`}
                 >
                   Hunza Valley
-                </a>
+                </Link>
               </li>
-              <li className="nav-item mb-2">
+              {/* <li className="nav-item mb-2">
                 <a
                   href="#"
                   className={`nav-link p-0 text-secondary ${styles.footerlink}`}
@@ -75,7 +79,7 @@ export default function Footer() {
                 >
                   Skardu
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
 

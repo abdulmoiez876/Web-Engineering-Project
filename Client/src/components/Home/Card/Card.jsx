@@ -1,26 +1,34 @@
 import React from "react";
 import styles from "./card.module.css";
 import cardPic from "../../../assets/login.jpg";
+import { useNavigate } from "react-router-dom";
 
 export default function Cards() {
+  const navigate = useNavigate();
+
+
   const cardInfo = [
     {
       title: "Dubai",
       btntext: "Explore",
+      desc: "UAE",
       img: require("../../../assets/dubai.jpg"),
     },
     {
       title: "Shinghai",
+      desc: "China",
       btntext: "Explore",
       img: require("../../../assets/shinghai.jpg"),
     },
     {
       title: "Islamabad",
+      desc: "Pakistan",
       btntext: "Explore",
       img: require("../../../assets/islamabad.jpg"),
     },
     {
       title: "New York",
+      desc: "USA",
       btntext: "Explore",
       img: require("../../../assets/newyork.jpg"),
     },
@@ -37,7 +45,10 @@ export default function Cards() {
           </h2>
           <button
             className={`btn btn-outline-light mx-4 mt-2 text-center ${styles.cardbtn}`}
-            navigator={"/destination"}
+            // navigator={"/destination"}
+            onClick={() => {
+              navigate(`/destination/${card.title}/${card.desc}`);
+            }}
           >
             {card.btntext}
           </button>

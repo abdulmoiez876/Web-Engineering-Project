@@ -4,8 +4,12 @@ import Carousel from "react-bootstrap/Carousel";
 import NavBar from "../../Navbar/Navbar";
 import Card from "../../Home/Card/Card";
 import Footer from "../../Footer/Footer";
+import { useParams } from "react-router-dom";
 
 export default function Destination() {
+  const {name} = useParams();
+  const {city} = useParams();
+
   return (
     <>
       <div className={`${styles.maincontainer}`}>
@@ -52,8 +56,8 @@ export default function Destination() {
       </div>
       <div className={`row m-0 ${styles.lowercontainer}`}>
         <div className={`col-7 ${styles.left}`}>
-          <h1 className="p-0 m-0 text-success">Chitral</h1>{" "}
-          <span className="text-muted">Khyber Pakhtunkhwa, Pakistan</span>
+          <h1 className="p-0 m-0 text-success">{name}</h1>{" "}
+          <span className="text-muted">{city}</span>
           <p className="my-4">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere,
             aperiam. Fugiat consectetur ducimus ullam commodi libero vel quis?
