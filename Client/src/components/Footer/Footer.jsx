@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <div className="fluid px-5 bg-dark">
+    <div className={`fluid px-5 bg-dark ${styles.footer}`}>
       <footer className="pt-5 text-light">
         <div className={`row ${styles.row}`}>
           <div className={`col-2  ${styles.columns}`}>
-            <h5 className="text-success">TOP DESTINATIONS</h5>
+            <h5 className={`text-success ${styles.footerheading}`}>TOP DESTINATIONS</h5>
             <ul className="nav flex-column">
               <li className="nav-item mb-2">
                 <a
@@ -78,7 +78,7 @@ export default function Footer() {
           </div>
 
           <div className={`col-2 ${styles.columns}`}>
-            <h5 className="text-success">TRAVEL INTERESTS</h5>
+            <h5 className={`text-success ${styles.footerheading}`}>TRAVEL INTERESTS</h5>
             <ul className="nav flex-column">
               <li className="nav-item mb-2">
                 <a
@@ -124,7 +124,7 @@ export default function Footer() {
           </div>
 
           <div className={`col-2 ${styles.columns}`}>
-            <h5 className="text-success">SHOP</h5>
+            <h5 className={`text-success ${styles.footerheading}`}>SHOP</h5>
             <ul className="nav flex-column">
               <li className="nav-item mb-2">
                 <a
@@ -161,7 +161,7 @@ export default function Footer() {
             </ul>
           </div>
           <div className={`col-2 ${styles.columns}`}>
-            <h5 className="text-success">ABOUT US</h5>
+            <h5 className={`text-success ${styles.footerheading}`}>ABOUT US</h5>
             <ul className="nav flex-column">
               <li className="nav-item mb-2">
                 <Link
@@ -216,16 +216,13 @@ export default function Footer() {
 
           <div className={`col-4 ${styles.subscribe}`}>
             <form>
-              <h5>Subscribe to our newsletter</h5>
+              <h2 className={`text-success`}>Subscribe to our newsletter</h2>
               <p>Monthly digest of whats new and exciting from us.</p>
-              <div className="d-flex w-100 gap-2">
-                <label for="newsletter1" className="visually-hidden">
-                  Email address
-                </label>
+              <div className="d-flex w-100 gap-4">
                 <input
-                  id="newsletter1"
+                  id="newsletterEmail"
                   type="text"
-                  className="form-control"
+                  className="form-control w-75"
                   placeholder="Email address"
                 />
                 <button className="btn btn-success" type="button">

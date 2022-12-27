@@ -6,7 +6,7 @@ export default function Subscribe() {
     <div className={`bg-success p-5 ${styles.container3}`}>
       <div className={`mx-5 p-5 row card rounded-5 bg-light ${styles.c3card}`}>
         <div className={`col-md-5 mx-0 ${styles.colum}`}>
-          <h2>Subscribe & Get 20% off</h2>
+          <h1>Subscribe & Get 20% off</h1>
           <p>
             Join our newsletter and discover new destinations to inspire the
             traveler within. Plus, get 20% off at our online shop. Every week

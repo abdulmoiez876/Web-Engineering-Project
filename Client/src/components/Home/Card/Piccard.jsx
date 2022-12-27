@@ -28,16 +28,15 @@ export default function Piccard() {
   ];
   const renderCard = (card, index) => {
     return (
-      <div className={`card text-white p-0 ${styles.innerdiv}`} key={index}>
-        <img
-          src={card.img}
-          className={`card-img ${styles.img}`}
-          alt="cardimg"
-        />
+      <div
+        className={`card text-white p-0 ${styles.innerdiv}`}
+        style={{ backgroundImage: `url(${card.img})` }}
+        key={index}
+      >
         <div className={`card-img-overlay ${styles.imgText}`}>
-          <h5 className="card-title">{card.title}</h5>
-          <p className="card-text">{card.detail}</p>
-          <p className="card-text">{card.date}</p>
+          <h5 className={`ard-title  ${styles.title}`}>{card.title}</h5>
+          <p className={`card-text ${styles.detail}`}>{card.detail}</p>
+          <p className={`card-text text-warning ${styles.date}`}>{card.date}</p>
         </div>
       </div>
     );
@@ -63,17 +62,12 @@ export default function Piccard() {
       <div
         className={`card bg-light text-white ${styles.innerdiv2}`}
         key={index}
+        style={{ backgroundImage: `url(${card.img})` }}
       >
-        
-        <img
-          src={card.img}
-          className={`card-img ${styles.img2}`}
-          alt="cardimg"
-        />
         <div className={`card-img-overlay ${styles.imgText2}`}>
-          <h5 className="card-title">{card.title}</h5>
-          <p className="card-text">{card.detail}</p>
-          <p className="card-text">{card.date}</p>
+          <h5 className={`card-title  ${styles.title}`}>{card.title}</h5>
+          <p className={`card-text ${styles.detail}`}>{card.detail}</p>
+          <p className={`card-text text-warning ${styles.date}`}>{card.date}</p>
         </div>
       </div>
     );
@@ -83,7 +77,9 @@ export default function Piccard() {
       <h2 className={`pt-2 text-success ${styles.section}`}>
         Explore Pakistan
       </h2>
-      <div className={`row m-0 ${styles.container}`}>{cardInfo.map(renderCard)}</div>
+      <div className={`row m-0 ${styles.container}`}>
+        {cardInfo.map(renderCard)}
+      </div>
       <div className={styles.container2}>{cardInfo2.map(renderCard2)}</div>
     </div>
   );

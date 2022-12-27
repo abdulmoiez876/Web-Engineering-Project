@@ -37,6 +37,7 @@ export default function Cards() {
           </h2>
           <button
             className={`btn btn-outline-light mx-4 mt-2 text-center ${styles.cardbtn}`}
+            navigator={"/destination"}
           >
             {card.btntext}
           </button>
@@ -47,9 +48,9 @@ export default function Cards() {
 
   return (
     <>
-      <a className={`row ${styles.cardsrow}`} href="#">
+      <div className={`row ${styles.cardsrow}`} href="#">
         {cardInfo.map(renderCard)}
-      </a>
+      </div>
     </>
   );
 }

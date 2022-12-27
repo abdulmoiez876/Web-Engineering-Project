@@ -8,6 +8,7 @@ import icon3 from "../../assets/feedback.png";
 import icon4 from "../../assets/partnership.png";
 import icon5 from "../../assets/inquiry.png";
 import { useNavigate } from 'react-router-dom';
+import Navbar from "../Navbar/Navbar"
 
 export default function Contactus() {
   const navigate = useNavigate();
@@ -62,30 +63,8 @@ export default function Contactus() {
 
   return (
     <>
+    <Navbar/>
       <div className={`${styles.maincontainer}`}>
-        <div className={`row ${styles.upperrow}`}>
-          <div className={`col-md-6 pt-4 px-5 ${styles.logo}`}>
-            <a href="#">
-              <img src={logo} className={styles.logowidth} alt="" />
-            </a>
-          </div>
-          <div className={`col-md-6 px-5 m-0 w-25 ${styles.goback}`}>
-            <a
-              href="#"
-              className={`btn btn-outline-success px-4 rounded-5 ${styles.gobacklink}`}
-            >
-              <i
-                className={`fas fa-external-link-alt ${styles.gobackicon}`}
-              ></i>
-              <p className={`p-0 m-0 ${styles.gobacktext}`}>
-                Return to Tripify.com
-              </p>
-            </a>
-          </div>
-        </div>
-        <div className={`row px-5 mx-1`}>
-          <hr className={styles.hr} />
-        </div>
         <div className={`row ${styles.searchbar}`}>
           <p className={`text-center mb-0 text-light ${styles.searchtext}`}>
             DISCOVER THE ANSWERS YOU'RE LOOKING FOR

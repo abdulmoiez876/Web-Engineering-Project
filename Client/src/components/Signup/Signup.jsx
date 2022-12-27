@@ -62,6 +62,7 @@ export default function Signup() {
 
   return (
     <>
+      <div className={styles.main}>
       <section
         className={`card px-4 py-4 px-md-5 text-center text-lg-start ${styles.signupform}`}
       >
@@ -77,13 +78,13 @@ export default function Signup() {
           <h3>Sign up</h3>
         </div>
         <form>
-          <div class="row">
-            <div class="col-md-6 my-4">
+          <div class={`row my-4 ${styles.namesrow}`}>
+            <div class={`col-md-6 ${styles.namescol}`}>
               <div class="form-outline">
                 <input type="text" class="form-control" placeholder="First name" onChange = {changeHandler} name = "firstName" value={firstName} required />
               </div>
             </div>
-            <div class="col-md-6 my-4">
+            <div class={`col-md-6  ${styles.namescol}`}>
               <div class="form-outline">
                 <input type="text" class="form-control" placeholder="Last name" onChange = {changeHandler} name = "lastName" value={lastName} required />
               </div>
@@ -105,29 +106,12 @@ export default function Signup() {
           <button type="submit" onClick={signUpHandler} class={`btn btn-outline-success btn-block ${styles.btn}`}>
             Sign up
           </button>
-          <div class="text-center mt-4">
-            <p className="text-success">or sign up with:</p>
-            <button type="button" class={`btn btn-link btn-floating mx-1 ${styles.signupicon}`}>
-              <i className="fab fa-facebook-f"></i>
-            </button>
-
-            <button type="button" class={`btn btn-link btn-floating mx-1 ${styles.signupicon}`}>
-              <i className="fab fa-google"></i>
-            </button>
-
-            <button type="button" class={`btn btn-link btn-floating mx-1 ${styles.signupicon}`}>
-              <i className="fab fa-twitter"></i>
-            </button>
-
-            <button type="button" class={`btn btn-link btn-floating mx-1 ${styles.signupicon}`}>
-              <i className="fab fa-github"></i>
-            </button>
-          </div>
           <div className="text-center mt-2 d-flex justify-content-center">
             <p className="text-secondary m-0">Already Registered?</p><Link className={`mx-1 ${styles.loginlink}`} to='/'>Login</Link>
           </div>
         </form>
       </section>
+      </div>
 
       <div>
         {/* <img src={loginPic} alt="loginPic" className={styles.signupbgpic} /> */}

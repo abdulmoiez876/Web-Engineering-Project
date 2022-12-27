@@ -82,7 +82,7 @@ export default function Navbar() {
                   setShowUserDetails(!showUserDetails);
                 }}
               >
-                <BsFillPersonFill className="display-6" />
+                <BsFillPersonFill className="display-5" />
               </a>
             </div>
           </div>
@@ -110,7 +110,7 @@ export default function Navbar() {
       <div className={`${styles.profile}`}>
         {/* <button className="btn btn-success me-2">Login</button> */}
         <a type="button" onClick={() => { setShowUserDetails(!showUserDetails) }}>
-          <BsFillPersonFill className="display-6" />
+          <BsFillPersonFill />
         </a>
       </div>
 

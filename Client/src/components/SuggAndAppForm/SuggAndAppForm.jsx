@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { countryCityData } from "../Home/Searchbar/SearchBarData";
+import styles from "./suggAndAppForm.module.css"
 
 export default function (props) {
   const [selectedCountry, setselectedCountry] = useState("United States")
@@ -13,7 +14,7 @@ export default function (props) {
 
 
   return (
-    <div className={`w-50 rounded-4 shadow card bg-light`}>
+    <div className={`w-50 rounded-4 shadow card bg-light ${styles.formcontainer}`}>
       <h1 className={`text-center my-5 text-success`}>{props.show ?"Application":"Suggestion"} Form</h1>
       <form className={`mx-5 my-4`}>
         <div className="row">

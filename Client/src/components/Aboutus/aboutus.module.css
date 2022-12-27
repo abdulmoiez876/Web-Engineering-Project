@@ -3,49 +3,10 @@
   height: 90vh;
   background-image: url("../../assets/aboutus.jpg");
   background-size: cover;
-}
-.upperrow {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  height: 15vh;
-}
-.logowidth {
-  width: 25%;
-}
-.goback {
-  margin: 0;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-100%, -50%);
-  transform: translate(-100%, -50%);
-}
-.gobacklink {
-  justify-content: space-between;
-  color: white;
-  margin: 0;
-  position: relative;
-  top: 50%;
-  left: 100%;
-  -ms-transform: translate(-100%, -50%);
-  transform: translate(-100%, -50%);
+  background-position: center;
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  width: 85%;
-}
-.gobacklink:hover {
-  color: green;
-}
-.abouttext {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  justify-content: center;
 }
 .heading {
   font-size: 5rem;
@@ -67,15 +28,68 @@
   margin: auto;
 }
 
-.container4{
-  padding:5%;
+.container4 {
+  padding: 5%;
 }
-.c4heading{
+.c4heading {
   width: 40%;
 }
-.c4card{
+.c4card {
   background-color: rgba(0, 128, 0, 0.386);
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 400px;
+  margin-top: 4%;
+}
+.cardsrow{
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+@media (max-width: 900px) {
+  .aboutdetail{
+    width: 60% !important;
+  }
+}
+@media (max-width: 768px) {
+  .cardsrow {
+    justify-content: center;
+  }
+  .c4heading{
+    font-size: 1.5rem !important;
+  }
+  .heading{
+    font-size: 4rem;
+  }
+  .subheading{
+    font-size: 1.5rem;
+  }
+  .container1{
+    height:60vh;
+  }
+}
+@media (max-width: 768px) {
+  
+  .heading{
+    font-size: 3rem;
+  }
+  .subheading{
+    font-size: 1rem;
+  }
+  .container1{
+    height:50vh;
+  }
+}
+
+@media (max-width:446px){
+  .container1{
+    width: 446px;
+  }
+  .container2{
+    width: 446px;
+  }
+  .container4{
+    width: 446px;
+  }
 }

@@ -12,15 +12,20 @@ import Subscribe from "../Subscribe/Subscribe";
 export default function Home() {
   return (
     <>
-      <Navbar/>
+      <Navbar />
       <div className={`${styles.main}`}>
-        <Searchbar />
+        <h1 className={`text-light ${styles.maintitle}`}>
+          EXPLORE THE WORLD WITH A SMILE
+        </h1>
       </div>
-      <div className={`p-5 ${styles.outter}`}>
-        <div className={`row`}>
-          <p className="mb-1">PLAN YOUR TRIP</p>
-          <h2 className="col-md-6">Where to next?</h2>
-          <div className={`col-md-6 ${styles.viewbtn}`}>
+      <div className={`${styles.outter}`}>
+        <div className={`row ${styles.oheading}`}>
+          <div className="col">
+            <p className="mb-1">PLAN YOUR TRIP</p>
+            <h2>Where to next?</h2>
+          </div>
+
+          <div className={`col ${styles.viewbtn}`}>
             <button
               className={`btn btn-outline-success rounded-5 ${styles.viewdest}`}
             >
@@ -37,27 +42,27 @@ export default function Home() {
       <Subscribe />
       <div className={`row ${styles.partnersrow}`}>
         <h2 className="text-center text-success mb-5">OUR PARTNERS</h2>
-          <div className={`col ${styles.plogoDiv}`}>
-            <img src={require("../../assets/bookme.png")} alt="" />
-          </div>
-          <div className={`col ${styles.plogoDiv}`}>
-            <img src={require("../../assets/delta.png")} alt="" />
-          </div>
-          <div className={`col ${styles.plogoDiv}`}>
-            <img src={require("../../assets/emirates.png")} alt="" />
-          </div>
-          <div className={`col ${styles.plogoDiv}`}>
-            <img src={require("../../assets/malaysia.png")} alt="" />
-          </div>
-          <div className={`col ${styles.plogoDiv}`}>
-            <img src={require("../../assets/qatar.png")} alt="" />
-          </div>
-          <div className={`col ${styles.plogoDiv}`}>
-            <img src={require("../../assets/singapore.png")} alt="" />
-          </div>
-          <div className={`col ${styles.plogoDiv}`}>
-            <img src={require("../../assets/turkish.png")} alt="" />
-          </div>
+        <div className={`col ${styles.plogoDiv}`}>
+          <img src={require("../../assets/bookme.png")} alt="" />
+        </div>
+        <div className={`col ${styles.plogoDiv}`}>
+          <img src={require("../../assets/delta.png")} alt="" />
+        </div>
+        <div className={`col ${styles.plogoDiv}`}>
+          <img src={require("../../assets/emirates.png")} alt="" />
+        </div>
+        <div className={`col ${styles.plogoDiv}`}>
+          <img src={require("../../assets/malaysia.png")} alt="" />
+        </div>
+        <div className={`col ${styles.plogoDiv}`}>
+          <img src={require("../../assets/qatar.png")} alt="" />
+        </div>
+        <div className={`col ${styles.plogoDiv}`}>
+          <img src={require("../../assets/singapore.png")} alt="" />
+        </div>
+        <div className={`col ${styles.plogoDiv}`}>
+          <img src={require("../../assets/turkish.png")} alt="" />
+        </div>
       </div>
       <Footer />
     </>

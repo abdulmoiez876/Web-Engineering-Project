@@ -28,3 +28,22 @@
 .text{
   margin: 5% 8%;
 }
+@media (max-width:890px){
+  .pagetitle{
+    font-size:4rem;
+  }
+  .maincontainer{
+    height: 60vh;
+  }
+}
+@media (max-width:600px){
+  .pagetitle{
+    font-size:3rem;
+  }
+}
+@media (max-width:446px){
+  .maincontainer{
+    width: 446px;
+  }
+  
+}

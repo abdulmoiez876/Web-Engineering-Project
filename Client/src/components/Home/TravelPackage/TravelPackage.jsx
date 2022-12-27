@@ -10,18 +10,18 @@ export default function TravelPackage() {
     <div className={`float pt-5 ${styles.container}`}>
       <div className={`py-4 ${styles.travelpkgpic}`}>
         <div className={`w-25 ${styles.offer}`}>
-          <h4 className={`bg-success p-3 text-light`}>
+          <h5 className={`bg-success p-3 text-light ${styles.offertext}`}>
             {offer}
-          </h4>
+          </h5>
         </div>
         <div className={styles.floatclear}></div>
         <div className={`w-25 text-light ${styles.heading} my-5`}>
-          <p className={``}>{category}</p>
-          <h1>{mainheading}</h1>
-          <p className="w-75">
+          <p className={`${styles.offername}`}>{category}</p>
+          <h1 className={styles.mainheading} >{mainheading}</h1>
+          <p className={`w-75 ${styles.offerdetail}`}>
            {details}
           </p>
-          <button className="btn btn-outline-success text-light border-light">
+          <button className={`btn btn-success text-light ${styles.button}`}>
             Book Now
           </button>
         </div>

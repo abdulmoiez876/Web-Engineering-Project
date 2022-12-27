@@ -3,8 +3,13 @@
   height: 80vh;
   background-image: url(../../assets/contactus.jpg);
   background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
-.upperrow {
+/* .upperrow {
   width: 100%;
   margin: 0;
   padding: 0;
@@ -41,10 +46,11 @@
 }
 .hr {
   border-top: 2px solid green;
-}
-
+} */
 .searchbar {
-  margin: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .searchinput {
   font-family: "Times New Roman", Times, serif;
@@ -52,12 +58,6 @@
   font-weight: bold;
   font-size: 1rem;
   width: 50%;
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
 }
 .searchinput:focus {
   outline: 2px solid #198754 !important;
@@ -92,4 +92,10 @@
 
 .smallfooter {
   margin-top: 10%;
+}
+.cardsrow{
+  flex-wrap: wrap;
+}
+.card{
+  min-width: 300px;
 }

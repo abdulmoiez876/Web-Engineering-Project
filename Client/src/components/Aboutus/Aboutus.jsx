@@ -3,6 +3,7 @@ import styles from "./aboutus.module.css";
 import logo from "../../assets/logo.png";
 import Footer from "../Footer/Footer";
 import Subscribe from "../Subscribe/Subscribe";
+import Navbar from "../Navbar/Navbar";
 
 export default function Aboutus() {
   const cardInfo = [
@@ -28,28 +29,8 @@ export default function Aboutus() {
   };
   return (
     <>
-      {" "}
+      <Navbar />
       <div className={`${styles.container1}`}>
-        <div className={`row ${styles.upperrow}`}>
-          <div className={`col-md-6 pt-4 px-5 ${styles.logo}`}>
-            <a href="#">
-              <img src={logo} className={styles.logowidth} alt="" />
-            </a>
-          </div>
-          <div className={`col-md-6 px-5 m-0 w-25 ${styles.goback}`}>
-            <a
-              href="#"
-              className={`btn btn-outline-light px-4 rounded-5 ${styles.gobacklink}`}
-            >
-              <i
-                className={`fas fa-external-link-alt ${styles.gobackicon}`}
-              ></i>
-              <p className={`p-0 m-0 ${styles.gobacktext}`}>
-                Return to Tripify.com
-              </p>
-            </a>
-          </div>
-        </div>
         <div className={`row ${styles.abouttext}`}>
           <h1 className={`text-center text-light ${styles.heading}`}>
             About Us
@@ -87,9 +68,9 @@ export default function Aboutus() {
         <h1 className={`mx-4 ${styles.c4heading}`}>
           At Tripify, our core values guide our evolution:
         </h1>
-        <div className="mt-4 d-flex justify-content-space-between">{cardInfo.map(renderCard)}</div>
+        <div className={`mt-4 d-flex justify-content-space-between ${styles.cardsrow}`}>{cardInfo.map(renderCard)}</div>
       </div>
-      <Footer />
+      <Footer/>
     </>
   );
 }

@@ -69,6 +69,7 @@ function App() {
         <Route path="/adminHotel" element={<AdminHotels/>} />
         <Route path="/addHotel" element={<AddHotel />} />
         <Route path="/editHotel/:id" element={<EditHotel />} />
+        <Route path="/destination" element={<Destination />} />
       </Routes>
     </>
   );
