@@ -8,7 +8,9 @@ export default function Footer() {
       <footer className="pt-5 text-light">
         <div className={`row ${styles.row}`}>
           <div className={`col-2  ${styles.columns}`}>
-            <h5 className={`text-success ${styles.footerheading}`}>TOP DESTINATIONS</h5>
+            <h5 className={`text-success ${styles.footerheading}`}>
+              TOP DESTINATIONS
+            </h5>
             <ul className="nav flex-column">
               <li className="nav-item mb-2">
                 <a
@@ -78,7 +80,9 @@ export default function Footer() {
           </div>
 
           <div className={`col-2 ${styles.columns}`}>
-            <h5 className={`text-success ${styles.footerheading}`}>TRAVEL INTERESTS</h5>
+            <h5 className={`text-success ${styles.footerheading}`}>
+              TRAVEL INTERESTS
+            </h5>
             <ul className="nav flex-column">
               <li className="nav-item mb-2">
                 <a
@@ -127,36 +131,28 @@ export default function Footer() {
             <h5 className={`text-success ${styles.footerheading}`}>SHOP</h5>
             <ul className="nav flex-column">
               <li className="nav-item mb-2">
-                <a
-                  href="#"
+                <Link
+                  to="/guidebooks"
                   className={`nav-link p-0 text-secondary ${styles.footerlink}`}
                 >
                   Destination Guides
-                </a>
+                </Link>
               </li>
               <li className="nav-item mb-2">
-                <a
-                  href="#"
-                  className={`nav-link p-0 text-secondary ${styles.footerlink}`}
-                >
-                  Tripify Shop
-                </a>
-              </li>
-              <li className="nav-item mb-2">
-                <a
-                  href="#"
+                <Link
+                  to="/englishguides"
                   className={`nav-link p-0 text-secondary ${styles.footerlink}`}
                 >
                   English Guides
-                </a>
+                </Link>
               </li>
               <li className="nav-item mb-2">
-                <a
-                  href="#"
+                <Link
+                  to="/urduguides"
                   className={`nav-link p-0 text-secondary ${styles.footerlink}`}
                 >
                   Urdu Guides
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

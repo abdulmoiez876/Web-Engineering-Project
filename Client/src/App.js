@@ -28,15 +28,10 @@ import Contactusform from "./components/Contactus/Contactusform/Contactusform";
 import Destination from "./components/pages/Destination/Destination";
 import Bookingform from "./components/Bookingform/Bookingform";
 import Hotelcard from "./components/Hotelcard/Hotelcard";
-<<<<<<< HEAD
-import UrduBooks from "./components/Footer/Shop/UrduGuides/UrduBooks/UrduBooks"
-import Book from "./components/Footer/Shop/GuideBooks/Books/Book/Book"
-import UrduBook from "./components/Footer/Shop/UrduGuides/UrduBooks/UrduBook/UrduBook"
-=======
 import AdminHotels from './components/Admin/AdminHotels/AdminHotels';
 import AddHotel from "./components/Admin/AdminHotels/AddHotel/AddHotel";
 import EditHotel from "./components/Admin/AdminHotels/EditHotel/EditHotel";
->>>>>>> f90555b1819d1438ebae5aca6a3de73096ec3363
+import UrduBooks from "./components/Footer/Shop/UrduGuides/UrduBooks/UrduBooks"
 
 function App() {
   
@@ -71,14 +66,7 @@ function App() {
         <Route path="/privacy" element={<Privacy/>} />
         <Route path="/booking" element={<Booking/>} />
         <Route path="/englishbook/:name/:image/:description/:price" element={<EnglishBook/>}/>
-<<<<<<< HEAD
-        <Route path="/book/:name/:image/:description/:price" element={<Book/>}/>
-        <Route path="/urdubook/:name/:image/:description/:price" element={<UrduBook/>}/>
-
-        <Route path="/bookingform" element={<Bookingform/>} />
-=======
         <Route path="/bookingform/:id" element={<Bookingform/>} />
->>>>>>> f90555b1819d1438ebae5aca6a3de73096ec3363
         <Route path="/contactUsForm" element={<Contactusform/>} />
         <Route path="/adminHotel" element={<AdminHotels/>} />
         <Route path="/addHotel" element={<AddHotel />} />
