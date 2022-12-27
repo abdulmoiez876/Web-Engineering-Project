@@ -27,7 +27,7 @@ export default function AdventureTravel() {
         />
         <div className={styles.flex}>
             <div className={`${styles.caption}`}>
-                <h1>{slide.caption}</h1>
+                <h1 className={styles.heading}>{slide.caption}</h1>
                 <h5 className={styles.description}>{slide.description}</h5>
             </div>
             </div>

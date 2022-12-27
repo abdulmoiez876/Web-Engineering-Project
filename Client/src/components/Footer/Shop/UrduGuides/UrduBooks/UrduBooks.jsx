@@ -4,9 +4,12 @@ import styles from './urduBooks.module.css'
 import Navbar from '../../../../Navbar/Navbar'
 import { useParams } from 'react-router-dom'
 import Footer from '../../../Footer'
+import { useNavigate } from 'react-router-dom'
 
 function UrduBooks() {
     const params = useParams();
+    const navigate = useNavigate();
+
   return (
     <>
     <Navbar/>
@@ -16,7 +19,7 @@ function UrduBooks() {
             {booksData.map((element, index)=>{
                 return <div className={styles.grid}>
                    
-                        <img className={styles.bookImage} src={element["image"]}></img>
+                        <img onClick={()=>{navigate(`/urdubook/${element.name}/${element.imageString}/${element.description}/${element.price}`)}} className={styles.bookImage} src={element["image"]}></img>
                       
                         <p className={styles.bookName}>{element["name"]}</p>
                 
